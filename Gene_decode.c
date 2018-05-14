@@ -9,10 +9,6 @@ void Gene_decode()
     int i,j,k;
     int timeStart;
     int temp;
-    int ProcedureTotal=0;
-    for(i=1;i<=N;i++)
-    ProcedureTotal+=n_num[i];
-
     memset(TimeMachine,0,sizeof(TimeMachine));
     memset(TimeTool,0,sizeof(TimeTool));
     memset(TimesTool,0,sizeof(TimesTool));
