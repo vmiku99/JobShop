@@ -31,7 +31,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Gene_crossmutate.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Gene_decode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Gene_denormalgene.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Gene_getgreat.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Gene_initialize.c">

@@ -18,8 +18,11 @@ extern int* GreatGeneChain;
 void GetGreatGene();
 void DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
-
 void Gene_decode();
+int Gene_evolve(int *Chromosome);
+int Gene_mutate(int *Chromosome,int flag);
+int Gene_cross1(int *Chromosome,int flag);
+int Gene_cross2(int a,int b,int *Chromosome,int flag);
 //ÆäËûº¯Êı
 int Max(int a,int b);
 //
