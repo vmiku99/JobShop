@@ -13,7 +13,12 @@ extern int *n_num;
 extern int **Chro;
 extern int ProcedureTotal;
 //遗传算法
+extern int GreatGeneNum;
+extern int* GreatGeneChain;
+void GetGreatGene();
+void DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
+
 void Gene_decode();
 //其他函数
 int Max(int a,int b);

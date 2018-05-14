@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0000000000000001101000000
-UnitCount=5
+UnitCount=7
 
 [VersionInfo]
 Major=1
@@ -92,6 +92,26 @@ BuildCmd=
 
 [Unit5]
 FileName=Others.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=Gene_getgreat.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=Gene_denormalgene.c
 CompileCpp=1
 Folder=
 Compile=1

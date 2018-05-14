@@ -5,6 +5,11 @@ int N,M;
 int *n_num;
 int **Chro;
 int ProcedureTotal=0;
+
+//开始 
+	int GreatGeneNum=0;
+	int* GreatGeneChain	;
+//结束 
 void freepointer()
 {
     free(Ma);
@@ -13,7 +18,7 @@ void freepointer()
     free(Chro);
 }
 int main()
-{
+{	srand((unsigned int)time(NULL));
     freopen("test3_3.txt","r",stdin);
     int i,j;
     scanf("%d%d",&N,&M);
@@ -43,10 +48,23 @@ int main()
 	//	printf("%d\t%d\n",i,n_num[i]);
     }
 
+	
+//开始
+		int times=chronum;
+		GreatGeneChain=(int*)malloc(sizeof(int)*(ProcedureTotal+1)); 
+		memset(GreatGeneChain,0,sizeof(GreatGeneChain));
+		for(i=1;i<=times;i++)
+		GetGreatGene();
+		printf("%d\n",GreatGeneNum);
+		for(i=1;i<=ProcedureTotal;i++)
+		printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
+//结束 
+
+
 
     Gene_initialize();
     Gene_decode();
-    freepointer();
+ //  freepointer();
     return 0;
 }
 
