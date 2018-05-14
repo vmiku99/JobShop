@@ -11,6 +11,7 @@ extern int N;
 extern int M;
 extern int *n_num;
 extern int **Chro;
+extern int ProcedureTotal;
 //ÒÅ´«Ëã·¨
 int Gene_initialize();
 void Gene_decode();

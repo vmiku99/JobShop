@@ -4,6 +4,7 @@ int **Ti;
 int N,M;
 int *n_num;
 int **Chro;
+int ProcedureTotal=0;
 void freepointer()
 {
     free(Ma);
@@ -20,7 +21,7 @@ int main()
     Ti=(int **)malloc(sizeof(int *)*(N+1));
     Chro=(int **)malloc(sizeof(int *)*(chronum));
     n_num=(int *)malloc(sizeof(int)*(N+1));
-    memset(n_num,0,sizeof(n_num));
+    memset(n_num,0,(sizeof(int)*(N+1)));
 	for(i=1;i<=N;i++)
     {
         Ma[i]=(int *)malloc(sizeof(int)*(M+1));
@@ -33,7 +34,10 @@ int main()
         {
             scanf("%d%d",&Ti[i][j],&Ma[i][j]);
             if(Ti[i][j]!=0)
-			n_num[i]++;
+			{
+			    n_num[i]++;
+			    ProcedureTotal++;
+			}
         }
         //n_num[i]=N;//!!!
 	//	printf("%d\t%d\n",i,n_num[i]);
