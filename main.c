@@ -5,16 +5,12 @@ int N,M;
 int *n_num;
 int **ChroOne;
 int ProcedureTotal=0;
-
-//开始
-	int GreatGeneNum=0;
-	int *GreatGeneChain	;
-	int *FitFather;
-	int *FitSon;
-	int **ChroTwo;
-	int **ChroSon;
-
-//结束
+int GreatGeneNum=0;
+int *GreatGeneChain	;
+int *FitFather;
+int *FitSon;
+int **ChroTwo;
+int **ChroSon;
 int main()
 {
     srand((unsigned int)time(NULL));
@@ -29,26 +25,29 @@ int main()
 		ChroTwo[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
 
 	}
-//开始
 		int times=chronum;
 		GreatGeneChain=(int*)malloc(sizeof(int)*(ProcedureTotal+1));
 		memset(GreatGeneChain,0,sizeof(int)*(ProcedureTotal+1));
 		for(i=1;i<=times;i++)
 		GetGreatGene();
-		printf("%d\n",GreatGeneNum);
-		for(i=1;i<=ProcedureTotal;i++)
-		printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
-//结束
+
+
    Gene_initialize();
-   Gene_decode();
-   /*int generation=1;
+//   Gene_decode();
+   int generation=1;
    while(generation<=30)
    {
-       if(generation%2==1)Gene_evolve((int **)ChroOne);
-       else Gene_evolve((int **)ChroTwo);
-       Roulette(generation);
-       generation++;
-   }*/
+//        if(generation%2==1)
+//	   		Gene_evolve((int **)ChroOne);
+//        else 
+//	   		Gene_evolve((int **)ChroTwo);
+//       	Fitness(generation);
+		Roulette(generation);
+       	generation++;
+   }
+	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);
+	for(i=1;i<=ProcedureTotal;i++)
+	printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
     return 0;
 }
 

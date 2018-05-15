@@ -14,31 +14,24 @@ int DeNormalGene(int* NormalGeneChain)
     memset(TimesTool,0,sizeof(int)*(N+1));
 
     for(j=1;j<=ProcedureTotal;j++)
-    {   //printf("hhhhhhhhhh\n");
+    {
         temp=NormalGeneChain[j];
-       	 
-		k=++TimesTool[temp];
-		//k=TimesTool[temp];
-		//if(k>10)
-		//printf("\t\t%d %d\n",TimesTool[temp],temp);
+       	k=++TimesTool[temp];
 	 	timeStart= Max(TimeTool[temp],TimeMachine[Ma[temp][k]]);
 		TimeTool[temp]=TimeMachine[Ma[temp][k]]=timeStart+Ti[temp][k];
         maxTime=Max(maxTime,TimeTool[temp]);
-     //   printf("%d\n",maxTime);
     }
-//printf("hhhhhhhhhh\n");
 	if(GreatGeneNum==0)
 		GreatGeneNum=maxTime;
 	else 
 	{
-	//printf("%d %d %d\n",GreatGeneNum,maxTime,GreatGeneNum>maxTime);
 	if(GreatGeneNum>maxTime)
-	{//	printf("hhhhhhhhhh\n");
-		GreatGeneNum=maxTime;
+	{
+   		GreatGeneNum=maxTime;
     	for(j=1;j<=ProcedureTotal;j++)
    			GreatGeneChain[j]=NormalGeneChain[j];
 	}}
-	
+	NormalGeneChain[0]=maxTime;
 //	free(TimeMachine);
 //	free(TimesTool);
 //	free(TimeTool);

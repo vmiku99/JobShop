@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<memory.h>
+#include<string.h> 
 #define chronum 101
 extern int **Ma;
 extern int **Ti;
@@ -12,15 +13,10 @@ extern int M;
 extern int *n_num;
 extern int **ChroOne;
 extern int ProcedureTotal;
-//开始
-
 extern int *FitFather;
 extern int *FitSon;
 extern int **ChroTwo;
 extern int **ChroSon;
-
-
-//结束
 //遗传算法
 extern int GreatGeneNum;
 extern int* GreatGeneChain;
@@ -38,5 +34,4 @@ void Roulette(int generation);
 int Max(int a,int b);
 int input();
 void Fitness(int generation);
-//
 #endif // JOBHEAD_H_INCLUDED

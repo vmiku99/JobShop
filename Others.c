@@ -22,8 +22,9 @@ void Fitness(int generation)//ÊÊÓ¦¶Èº¯Êı
 			}
 		}
 	for(i=1;i<chronum;i++)
-		{FitSon[i]=ChroSon[i][0]-GreatGeneNum+1;
+		{
+		FitSon[i]=ChroSon[i][0]-GreatGeneNum+1;
 		FitSon[i]=100000/FitSon[i];
 		}
 
-};
+}

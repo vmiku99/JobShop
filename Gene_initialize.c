@@ -4,12 +4,12 @@ int Gene_initialize()/////////////无返回值，带一个参数
 	int countnum[N+1];
     int i,j;
     int Arandom; 
-    int nnnnnn=0;
+    int times=0;
 	int Atemp;
     int temp;
-//    srand((unsigned int)time(NULL));
+
     for(i=1;i<=chronum-1;i++)
-    {	nnnnnn++;
+    {	times++;
         memset(countnum,0,sizeof(countnum));
         for(j=1;j<=ProcedureTotal;j++)
         {
@@ -17,7 +17,6 @@ int Gene_initialize()/////////////无返回值，带一个参数
 
             if(countnum[temp]>=n_num[temp])
             {
-           	 //if(ProcedureTotal==j)
                 j--;
                 continue;
             }
@@ -34,6 +33,6 @@ int Gene_initialize()/////////////无返回值，带一个参数
 	    i--;
 //        printf("%d\n",i);
     }
-    printf("The number of Chro is %d\n",nnnnnn);
+    printf("You try %d times to get A Group Chain\n",times);
     return 0;	 
 }

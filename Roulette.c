@@ -8,13 +8,10 @@ void Roulette(int generation)
 
 	int temp;
 	int foot;
-
-	foot+=temp;
-	foot%=FitAll;
 	int key=0;
 	int	finish;
 
-	for(finish=1;i<chronum;i++)
+	for(finish=1;finish<chronum;finish++)
 	{	
 		temp=rand()%FitAll+1;
 		foot=rand()%FitAll+1;
@@ -28,11 +25,11 @@ void Roulette(int generation)
 				{
 					key=1;
 					if(generation%2==1)
-						for(i=0;i<=ProcedureTotal;i++)
-						ChroTwo[i]=ChroOne[i];
+						for(j=0;j<=ProcedureTotal;j++)
+						ChroTwo[finish][j]=ChroOne[i][j];
 					else
 						for(i=1;i<=ProcedureTotal;i++)
-						ChroOne[i]=ChroTwo[i];
+						ChroOne[finish][j]=ChroTwo[i][j];
 				}
 			}
 		for(i=1;i<chronum&&key==0;i++)
@@ -42,11 +39,11 @@ void Roulette(int generation)
 				{
 					key=1;
 					if(generation%2==1)
-						for(i=0;i<=ProcedureTotal;i++)
-						ChroTwo[i]=ChroSon[i];
+						for(j=0;j<=ProcedureTotal;j++)
+						ChroTwo[finish][j]=ChroOne[i][j];
 					else
 						for(i=1;i<=ProcedureTotal;i++)
-						ChroOne[i]=ChroSon[i];
+						ChroOne[finish][j]=ChroTwo[i][j];
 				}
 			}
 	}

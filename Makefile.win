@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o
-LINKOBJ  = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o
+OBJ      = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o Gene_crossmutate.o input.o
+LINKOBJ  = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o Gene_crossmutate.o input.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pg -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -47,3 +47,9 @@ Allocate.o: Allocate.c
 
 Roulette.o: Roulette.c
 	$(CPP) -c Roulette.c -o Roulette.o $(CXXFLAGS)
+
+Gene_crossmutate.o: Gene_crossmutate.c
+	$(CPP) -c Gene_crossmutate.c -o Gene_crossmutate.o $(CXXFLAGS)
+
+input.o: input.c
+	$(CPP) -c input.c -o input.o $(CXXFLAGS)
