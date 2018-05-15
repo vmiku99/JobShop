@@ -1,7 +1,7 @@
 #include"jobhead.h"
 void Allocate()
 {
-	int i,j;
+	int i;
 	Ma=(int **)malloc(sizeof(int *)*(N+1));
     Ti=(int **)malloc(sizeof(int *)*(N+1));
     ChroOne=(int **)malloc(sizeof(int *)*(chronum));

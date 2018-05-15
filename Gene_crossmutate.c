@@ -1,24 +1,25 @@
 #include"jobhead.h"
-int Gene_evolve(int *Chromosome)
+int Gene_evolve(int **Chromosome)
 {
     const int canshu=2;
     int i;
     int ran;
-    for(i=chronum/canshu+1;i<chronum;i++)
+    for(i=1;i<chronum;i++)
     {
         ran=rand()%100+1;
         if(ran<=5)
         {
-            Gene_mutate(&Chromosome,i);
+            Gene_mutate((int **)Chromosome,i);
         }
         else
         {
-            Gene_cross1(&Chromosome,i);
+            Gene_cross1((int **)Chromosome,i);
             i++;
         }
     }
+    return 0;
 }
-int Gene_mutate(int *Chromosome,int flag)
+int Gene_mutate(int **Chromosome,int flag)
 {
     int ran;
     while(1)
@@ -27,7 +28,6 @@ int Gene_mutate(int *Chromosome,int flag)
         if(ran==0||ran==1)continue;
         else break;
     }
-    int i;
     int ran1,ran2;
     ran1=rand()%ProcedureTotal+1;
     while(1)
@@ -40,23 +40,24 @@ int Gene_mutate(int *Chromosome,int flag)
             {
                 if(j!=ran1&&j!=ran2)
                 {
-                    Chromosome[flag][j]=Chromosome[ran][j];
+                    ChroSon[flag][j]=Chromosome[ran][j];
                 }
                 else if(j==ran1)
                 {
-                    Chromosome[flag][j]=Chromosome[ran][ran2];
+                    ChroSon[flag][j]=Chromosome[ran][ran2];
                 }
                 else if(j==ran2)
                 {
-                    Chromosome[flag][j]=Chromosome[ran][ran1];
+                    ChroSon[flag][j]=Chromosome[ran][ran1];
                 }
             }
             break;
         }
     }
+    DeNormalGene(ChroSon[flag]);
     return 0;
 }
-int Gene_cross1(int *Chromosome,int flag)
+int Gene_cross1(int **Chromosome,int flag)
 {
     int ran1,ran2;
     while(1)
@@ -69,13 +70,13 @@ int Gene_cross1(int *Chromosome,int flag)
         ran2=rand()%ProcedureTotal+1;
         if(ran2!=ran1&&ran2!=1)
         {
-            Gene_cross2(ran1,ran2,&Chromosome,flag);
+            Gene_cross2(ran1,ran2,(int **)Chromosome,flag);
             break;
         }
     }
     return 0;
 }
-int Gene_cross2(int a,int b,int *Chromosome,int flag)
+int Gene_cross2(int a,int b,int **Chromosome,int flag)
 {
     int ran1,ran2;
     int i;
@@ -102,7 +103,7 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         {
             for(y=y;y<=ProcedureTotal;y++)
             {
-                Chromosome[flag][cou2]=Chromosome[a][cou2];
+                ChroSon[flag][cou2]=Chromosome[a][cou2];
                 cou2++;
             }
         }
@@ -113,8 +114,8 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         else x=Chromosome[b][(ran2+i)%ProcedureTotal+1];
         if(x!=Chromosome[a][cou])
         {
-            if(ran2+y<ProcedureTotal)Chromosome[flag][(ran2+y)%ProcedureTotal]=x;
-            else Chromosome[flag][(ran2+y)%ProcedureTotal+1]=x;
+            if(ran2+y<ProcedureTotal)ChroSon[flag][(ran2+y)%ProcedureTotal]=x;
+            else ChroSon[flag][(ran2+y)%ProcedureTotal+1]=x;
             y++;
         }
         else
@@ -122,6 +123,7 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
             cou++;
         }
     }
+    DeNormalGene(ChroSon[flag]);
     if(flag==chronum-1)return 0;
     y=1;cou=ran1;cou2=ran1;//重置
     int temp=a;a=b;b=temp;//交换ab再来一次！
@@ -132,7 +134,7 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         {
             for(y=y;y<=ProcedureTotal;y++)
             {
-                Chromosome[flag][cou2]=Chromosome[a][cou2];
+                ChroSon[flag][cou2]=Chromosome[a][cou2];
                 cou2++;
             }
         }
@@ -143,8 +145,8 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         else x=Chromosome[b][(ran2+i)%ProcedureTotal+1];
         if(x!=Chromosome[a][cou])
         {
-            if(ran2+y<ProcedureTotal)Chromosome[flag][(ran2+y)%ProcedureTotal]=x;
-            else Chromosome[flag][(ran2+y)%ProcedureTotal+1]=x;
+            if(ran2+y<ProcedureTotal)ChroSon[flag][(ran2+y)%ProcedureTotal]=x;
+            else ChroSon[flag][(ran2+y)%ProcedureTotal+1]=x;
             y++;
         }
         else
@@ -152,5 +154,6 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
             cou++;
         }
     }
+    DeNormalGene(ChroSon[flag]);
     return 0;
 }

@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Allocate.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Gene_crossmutate.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -47,6 +50,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Others.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Roulette.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="input.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="jobhead.h" />
