@@ -1,7 +1,7 @@
 #include"jobhead.h"
 void Gene_decode()
 {
-    int TimeTotal[chronum]; //各组总时间
+//    int TimeTotal[chronum]; //各组总时间
     int maxTime=0;   //当前组总时间
     int TimeMachine[M+1];//机器最后时间
     int TimeTool[N+1];//工件最后时间
@@ -36,10 +36,11 @@ void Gene_decode()
             maxTime=Max(maxTime,TimeTool[temp]);
 
 		 }
-        TimeTotal[i]=maxTime;
+//        TimeTotal[i]=maxTime;
+		Chro[i][0]=maxTime;
 //		maxTime=0;
 //		printf("%d\t%d\n",TimeTotal[i],maxTime);
-		printf("%d\n",TimeTotal[i]);
+//		printf("%d\n",maxTime);
 		memset(TimesTool,0,sizeof(TimesTool));
 		memset(TimeTool,0,sizeof(TimeTool));
     	memset(TimeMachine,0,sizeof(TimeMachine));
@@ -53,15 +54,15 @@ void Gene_decode()
 	memset(pptr,0,sizeof(int)*chronum);
 	for(a=1;a<=chronum-1;a++)
 	{//	printf("TIMETOTAL%d\n",TimeTotal[a]);
-		for(b=1;ptr[b]!=0&&TimeTotal[a]!=ptr[b]&&b<=chronum-1;b++);
-		if(TimeTotal[a]==ptr[b])
+		for(b=1;ptr[b]!=0&&Chro[a][0]!=ptr[b]&&b<=chronum-1;b++);
+		if(Chro[a][0]==ptr[b])
 	{
 		pptr[b]++;
 	//	printf("GG      %dTIMETOTAL%d\n",TimeTotal[a],b);
 	}
 		else {
 
-		ptr[b]=TimeTotal[a];
+		ptr[b]=Chro[a][0];
 		pptr[b]++;
 		}
 	}

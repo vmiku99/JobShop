@@ -16,7 +16,7 @@ extern int ProcedureTotal;
 extern int GreatGeneNum;
 extern int* GreatGeneChain;
 void GetGreatGene();
-void DeNormalGene(int* NormalGeneChain);
+int DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
 void Gene_decode();
 int Gene_evolve(int *Chromosome);

@@ -63,7 +63,7 @@ int main()
 
 
     Gene_initialize();
-    Gene_decode();
+ //   Gene_decode();
  //  freepointer();
     return 0;
 }

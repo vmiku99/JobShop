@@ -1,5 +1,5 @@
 #include"jobhead.h"
-void DeNormalGene(int* NormalGeneChain)
+int DeNormalGene(int* NormalGeneChain)
 {
     int *TimeTool=(int*)malloc(sizeof(int)*(N+1));
     int *TimesTool=(int*)malloc(sizeof(int)*(N+1));
@@ -38,8 +38,9 @@ void DeNormalGene(int* NormalGeneChain)
     	for(j=1;j<=ProcedureTotal;j++)
    			GreatGeneChain[j]=NormalGeneChain[j];
 	}}
+	
 //	free(TimeMachine);
 //	free(TimesTool);
 //	free(TimeTool);
-
+	return maxTime;
 }
