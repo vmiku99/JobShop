@@ -79,7 +79,6 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
 {
     int ran1,ran2;
     int i;
-    int cross[ProcedureTotal+1];
     ran1=rand()%ProcedureTotal+1;
     while(1)
     {
@@ -103,7 +102,7 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         {
             for(y=y;y<=ProcedureTotal;y++)
             {
-                Chromosome[flag][y]=Chromosome[a][cou2];
+                Chromosome[flag][cou2]=Chromosome[a][cou2];
                 cou2++;
             }
         }
@@ -133,7 +132,7 @@ int Gene_cross2(int a,int b,int *Chromosome,int flag)
         {
             for(y=y;y<=ProcedureTotal;y++)
             {
-                Chromosome[flag][y]=Chromosome[a][cou2];
+                Chromosome[flag][cou2]=Chromosome[a][cou2];
                 cou2++;
             }
         }
