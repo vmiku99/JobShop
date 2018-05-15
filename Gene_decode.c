@@ -17,7 +17,7 @@ void Gene_decode()
     {
         for(j=1;j<=ProcedureTotal;j++)
         {
-            temp=Chro[i][j];
+            temp=ChroOne[i][j];
            // for(k=TimesTool[temp];!(Ti[temp][k]);k++)
            // ;
         	k=++TimesTool[temp];
@@ -37,7 +37,7 @@ void Gene_decode()
 
 		 }
 //        TimeTotal[i]=maxTime;
-		Chro[i][0]=maxTime;
+		ChroOne[i][0]=maxTime;
 //		maxTime=0;
 //		printf("%d\t%d\n",TimeTotal[i],maxTime);
 //		printf("%d\n",maxTime);
@@ -54,15 +54,15 @@ void Gene_decode()
 	memset(pptr,0,sizeof(int)*chronum);
 	for(a=1;a<=chronum-1;a++)
 	{//	printf("TIMETOTAL%d\n",TimeTotal[a]);
-		for(b=1;ptr[b]!=0&&Chro[a][0]!=ptr[b]&&b<=chronum-1;b++);
-		if(Chro[a][0]==ptr[b])
+		for(b=1;ptr[b]!=0&&ChroOne[a][0]!=ptr[b]&&b<=chronum-1;b++);
+		if(ChroOne[a][0]==ptr[b])
 	{
 		pptr[b]++;
 	//	printf("GG      %dTIMETOTAL%d\n",TimeTotal[a],b);
 	}
 		else {
 
-		ptr[b]=Chro[a][0];
+		ptr[b]=ChroOne[a][0];
 		pptr[b]++;
 		}
 	}

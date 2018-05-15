@@ -1,5 +1,5 @@
 [Project]
-FileName=Job.dev
+FileName=Jobshop.dev
 Name=Job
 Type=1
 Ver=2
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0000000000000001101000000
-UnitCount=7
+UnitCount=9
 
 [VersionInfo]
 Major=1
@@ -112,6 +112,26 @@ BuildCmd=
 
 [Unit7]
 FileName=Gene_denormalgene.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=Allocate.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=Roulette.c
 CompileCpp=1
 Folder=
 Compile=1

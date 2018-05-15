@@ -23,14 +23,14 @@ int Gene_initialize()/////////////无返回值，带一个参数
             }
             else
             {
-                Chro[i][j]=temp;
+                ChroOne[i][j]=temp;
 //                printf("%d ",temp);
                 countnum[temp]++;
             }         
         }
         Arandom=rand()%100+1;
-        Atemp=DeNormalGene(Chro[i]);
-        if(Atemp>1.1*GreatGeneNum&&Arandom>=GreatGeneNum*50/Atemp)
+        Atemp=DeNormalGene(ChroOne[i]);
+        if(Atemp>1.2*GreatGeneNum&&Arandom>=GreatGeneNum*50/Atemp)
 	    i--;
 //        printf("%d\n",i);
     }

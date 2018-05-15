@@ -20,6 +20,7 @@ void GetGreatGene()
 		memset(NormalGeneChain,0,sizeof(NormalGeneChain));
 		for(j=1;j<=ProcedureTotal;j++)
 		{	//srand((unsigned int)time(NULL));
+
             temp=rand()%N+1;//printf("%d ",temp);
             if(countnum[temp]>=n_num[temp])
             {
@@ -34,7 +35,7 @@ void GetGreatGene()
                 countnum[temp]++;
             }
 		}
-	//	printf("\n");
+//		printf("\n");
 	DeNormalGene(NormalGeneChain);
 //	free(NormalGeneChain);
 //	}
