@@ -18,7 +18,7 @@ int ProcedureTotal=0;
 int main()
 {
     srand((unsigned int)time(NULL));
-    freopen("test3_3.txt","r",stdin);
+    freopen("test6_6.txt","r",stdin);
     int i;
     scanf("%d%d",&N,&M);
 	Allocate();
@@ -41,14 +41,14 @@ int main()
 //½áÊø
    Gene_initialize();
    Gene_decode();
-   int generation=1;
+   /*int generation=1;
    while(generation<=30)
    {
        if(generation%2==1)Gene_evolve((int **)ChroOne);
        else Gene_evolve((int **)ChroTwo);
        Roulette(generation);
        generation++;
-   }
+   }*/
     return 0;
 }
 

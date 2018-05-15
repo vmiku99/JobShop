@@ -1,7 +1,6 @@
 #include"jobhead.h"
 int Gene_evolve(int **Chromosome)
 {
-    const int canshu=2;
     int i;
     int ran;
     for(i=1;i<chronum;i++)
