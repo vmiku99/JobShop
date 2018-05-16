@@ -121,16 +121,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
-FileName=Allocate.c
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit9]
 FileName=Roulette.c
 CompileCpp=1
 Folder=
@@ -140,7 +130,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit10]
+[Unit9]
 FileName=Gene_crossmutate.c
 CompileCpp=1
 Folder=
@@ -150,7 +140,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit11]
+[Unit10]
 FileName=input.c
 CompileCpp=1
 Folder=
@@ -160,8 +150,18 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit11]
+FileName=Championships.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit12]
-FileName=..\..\..\Desktop\Job\Championships.c
+FileName=Pointer.c
 CompileCpp=1
 Folder=
 Compile=1
@@ -171,7 +171,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit13]
-FileName=..\..\..\Desktop\Job\Table.c
+FileName=Table.c
 CompileCpp=1
 Folder=
 Compile=1

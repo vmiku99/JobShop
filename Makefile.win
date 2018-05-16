@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o Gene_crossmutate.o input.o ../../../Desktop/Job/Championships.o ../../../Desktop/Job/Table.o
-LINKOBJ  = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Allocate.o Roulette.o Gene_crossmutate.o input.o ../../../Desktop/Job/Championships.o ../../../Desktop/Job/Table.o
+OBJ      = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Roulette.o Gene_crossmutate.o input.o Championships.o Pointer.o Table.o
+LINKOBJ  = main.o Gene_initialize.o Gene_decode.o Others.o Gene_getgreat.o Gene_denormalgene.o Roulette.o Gene_crossmutate.o input.o Championships.o Pointer.o Table.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pg -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -42,9 +42,6 @@ Gene_getgreat.o: Gene_getgreat.c
 Gene_denormalgene.o: Gene_denormalgene.c
 	$(CPP) -c Gene_denormalgene.c -o Gene_denormalgene.o $(CXXFLAGS)
 
-Allocate.o: Allocate.c
-	$(CPP) -c Allocate.c -o Allocate.o $(CXXFLAGS)
-
 Roulette.o: Roulette.c
 	$(CPP) -c Roulette.c -o Roulette.o $(CXXFLAGS)
 
@@ -54,8 +51,11 @@ Gene_crossmutate.o: Gene_crossmutate.c
 input.o: input.c
 	$(CPP) -c input.c -o input.o $(CXXFLAGS)
 
-../../../Desktop/Job/Championships.o: ../../../Desktop/Job/Championships.c
-	$(CPP) -c ../../../Desktop/Job/Championships.c -o ../../../Desktop/Job/Championships.o $(CXXFLAGS)
+Championships.o: Championships.c
+	$(CPP) -c Championships.c -o Championships.o $(CXXFLAGS)
 
-../../../Desktop/Job/Table.o: ../../../Desktop/Job/Table.c
-	$(CPP) -c ../../../Desktop/Job/Table.c -o ../../../Desktop/Job/Table.o $(CXXFLAGS)
+Pointer.o: Pointer.c
+	$(CPP) -c Pointer.c -o Pointer.o $(CXXFLAGS)
+
+Table.o: Table.c
+	$(CPP) -c Table.c -o Table.o $(CXXFLAGS)
