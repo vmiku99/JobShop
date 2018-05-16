@@ -21,10 +21,12 @@ void Table(int* NormalGeneChain)
     int MaTimeStart[M+1][N+1];
     int MaTimeStop[M+1][N+1];
     int MaTiTool[M+1][N+1];
-    memset(MaTimeStart,0,sizeof(MaTimeStart));
-    memset(MaTimeStop,0,sizeof(MaTimeStop));
-    memset(MaTiTool,0,sizeof(MaTiTool));
-
+	for(i=0;i<M;i++)
+	{	
+    memset(MaTimeStart[i],0,sizeof(int)*(N+1));
+    memset(MaTimeStop[i],0,sizeof(int)*(N+1));
+    memset(MaTiTool[i],0,sizeof(int)*(N+1));
+}
     int ma;
     int MaTimes[N+1];
     memset(MaTimes,0,sizeof(int)*(N+1));

@@ -14,7 +14,7 @@ int **ChroSon;
 int main()
 {
     srand((unsigned int)time(NULL));
-    freopen("test6_6.txt","r",stdin);
+    freopen("test2_2.txt","r",stdin);
     int i,j;
     scanf("%d%d",&N,&M);
 	Allocate();
