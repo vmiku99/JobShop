@@ -15,15 +15,15 @@ int main()
 {
     srand((unsigned int)time(NULL));
     freopen("test6_6.txt","r",stdin);
-    int i;
+    int i,j;
     scanf("%d%d",&N,&M);
 	Allocate();
 	input();
-    for(i=1;i<=chronum;i++)
+    for(i=0;i<chronum;i++)
 	{
 		ChroOne[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
 		ChroTwo[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
-
+        ChroSon[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
 	}
 		int times=chronum;
 		GreatGeneChain=(int*)malloc(sizeof(int)*(ProcedureTotal+1));
@@ -33,16 +33,14 @@ int main()
 
 
    Gene_initialize();
-//   Gene_decode();
+   Gene_decode();
    int generation=1;
    while(generation<=30)
    {
-//        if(generation%2==1)
-//	   		Gene_evolve((int **)ChroOne);
-//        else 
-//	   		Gene_evolve((int **)ChroTwo);
-//       	Fitness(generation);
-		Roulette(generation);
+        if(generation%2==1)Gene_evolveodd();
+        else Gene_evolveeven();
+      	Fitness(generation);
+        Roulette(generation);
        	generation++;
    }
 	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);

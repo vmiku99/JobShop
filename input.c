@@ -11,7 +11,7 @@ int input()
         gets(a);
         if(a[0]>='0'&&a[0]<='9')break;
     }
-    for(i=1;i<=N;i++)
+    for(i=1;i<=N+1;i++)
     {
         num=0;
         flag=1;

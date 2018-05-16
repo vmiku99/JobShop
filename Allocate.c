@@ -6,6 +6,7 @@ void Allocate()
     Ti=(int **)malloc(sizeof(int *)*(N+1));
     ChroOne=(int **)malloc(sizeof(int *)*(chronum));
     ChroTwo=(int **)malloc(sizeof(int *)*(chronum));
+    ChroSon=(int **)malloc(sizeof(int *)*(chronum));
     n_num=(int *)malloc(sizeof(int)*(N+1));
     memset(n_num,0,(sizeof(int)*(N+1)));
     FitFather=(int *)malloc(sizeof(int)*(chronum));

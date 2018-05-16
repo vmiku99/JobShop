@@ -1,16 +1,15 @@
 #include"jobhead.h"
 void GetGreatGene()
 {
-	int NormalGenenumber=0;
 	int* NormalGeneChain;
 	NormalGeneChain=(int*)malloc(sizeof(int)*(ProcedureTotal+1));
-	memset(NormalGeneChain,0,sizeof(NormalGeneChain));
+	memset(NormalGeneChain,0,(sizeof(int)*(ProcedureTotal+1)));
 	int countnum[N+1];
-	int i,j;
+	int j;
     int temp;
 
         memset(countnum,0,sizeof(countnum));
-		memset(NormalGeneChain,0,sizeof(NormalGeneChain));
+		memset(NormalGeneChain,0,(sizeof(int)*(ProcedureTotal+1)));
 		for(j=1;j<=ProcedureTotal;j++)
 		{
             temp=rand()%N+1;
