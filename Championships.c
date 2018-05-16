@@ -21,16 +21,21 @@ void Championships(int generation)
 				else 
 					tempgrade=ChroOne[temp][0];
 				if(tempchamnum==0)
-					tempchamnum=temp;
+				{	tempchamnum=temp;
+					tempchamgrade=tempgrade;	
+				}
 				else if(tempgrade<tempchamgrade)
+				{
 					tempchamnum=temp;
+					tempchamgrade=tempgrade;
+				}
 			}
 
 				if(temp>=chronum)
-					{for(i=0;i<ProcedureTotal;i++)
+					{for(i=0;i<=ProcedureTotal;i++)
 						ChroTwo[finish][i]=ChroSon[temp-chronum+1][i];}
 				else
-					{for(i=0;i<ProcedureTotal;i++)
+					{for(i=0;i<=ProcedureTotal;i++)
 						ChroTwo[finish][i]=ChroOne[temp][i];}
 		}
 	}
@@ -48,16 +53,21 @@ void Championships(int generation)
 				else 
 					tempgrade=ChroOne[temp][0];
 				if(tempchamnum==0)
-					tempchamnum=temp;
+				{	tempchamnum=temp;
+					tempchamgrade=tempgrade;	
+				}
 				else if(tempgrade<tempchamgrade)
+				{
 					tempchamnum=temp;
+					tempchamgrade=tempgrade;
+				}
 			}
 
 				if(temp>=chronum)
-					{for(i=0;i<ProcedureTotal;i++)
+					{for(i=0;i<=ProcedureTotal;i++)
 						ChroOne[finish][i]=ChroSon[temp-chronum+1][i];}
 				else
-					{for(i=0;i<ProcedureTotal;i++)
+					{for(i=0;i<=ProcedureTotal;i++)
 						ChroOne[finish][i]=ChroTwo[temp][i];}
 		}		
 	}

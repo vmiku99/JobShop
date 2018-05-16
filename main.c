@@ -41,6 +41,7 @@ int main()
         else Gene_evolveeven();
       	Fitness(generation);
         Roulette(generation);
+        //Championships(generation);
        	generation++;
    }
 	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);
