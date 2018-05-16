@@ -26,6 +26,7 @@ int DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
 void Gene_decode();
 void Roulette(int generation);
+void Championships(int generation);
 int Gene_evolveodd();
 int Gene_mutateodd(int flag);
 int Gene_cross1odd(int flag);
@@ -35,7 +36,8 @@ int Gene_mutateeven(int flag);
 int Gene_cross1even(int flag);
 int Gene_cross2even(int a,int b,int flag);
 //ÆäËûº¯Êı
+void Fitness(int generation);
 int Max(int a,int b);
 int input();
-void Fitness(int generation);
+void Table(int* NormalGeneChain);
 #endif // JOBHEAD_H_INCLUDED

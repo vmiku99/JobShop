@@ -46,6 +46,7 @@ int main()
 	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);
 	for(i=1;i<=ProcedureTotal;i++)
 	printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
+	Table(GreatGeneChain);
     return 0;
 }
 

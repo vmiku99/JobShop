@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0000000000000001101000000
-UnitCount=11
+UnitCount=13
 
 [VersionInfo]
 Major=1
@@ -152,6 +152,26 @@ BuildCmd=
 
 [Unit11]
 FileName=input.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=..\..\..\Desktop\Job\Championships.c
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit13]
+FileName=..\..\..\Desktop\Job\Table.c
 CompileCpp=1
 Folder=
 Compile=1
