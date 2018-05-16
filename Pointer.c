@@ -17,3 +17,27 @@ void Allocate()
         Ti[i]=(int *)malloc(sizeof(int)*(M+1));
     }
 }
+void freepointer()
+{
+    int i;
+    free(n_num);
+    free(GreatGeneChain);
+    free(FitFather);
+    free(FitSon);
+    for(i=1;i<=N;i++)
+    {
+        free(Ma[i]);
+        free(Ti[i]);
+    }
+    free(Ma);
+    free(Ti);
+    for(i=0;i<chronum;i++)
+	{
+		free(ChroOne[i]);
+		free(ChroTwo[i]);
+        free(ChroSon[i]);
+	}
+	free(ChroOne);
+	free(ChroTwo);
+	free(ChroSon);
+}

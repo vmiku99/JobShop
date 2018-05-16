@@ -27,5 +27,5 @@ void GetGreatGene()
 		}
 //		printf("\n");
 	DeNormalGene(NormalGeneChain);
-//	free(NormalGeneChain);
+	free(NormalGeneChain);
 }

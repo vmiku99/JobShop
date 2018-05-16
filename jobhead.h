@@ -5,7 +5,7 @@
 #include<time.h>
 #include<memory.h>
 #include<string.h>
-#define chronum 101
+#define chronum 301
 extern int **Ma;
 extern int **Ti;
 extern int N;
@@ -21,6 +21,7 @@ extern int **ChroSon;
 extern int GreatGeneNum;
 extern int* GreatGeneChain;
 void Allocate();
+void freepointer();
 void GetGreatGene();
 int DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();

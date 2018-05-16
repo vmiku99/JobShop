@@ -31,7 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Allocate.c">
+		<Unit filename="Championships.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Gene_crossmutate.c">
@@ -49,13 +49,19 @@
 		<Unit filename="Gene_initialize.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Input.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Others.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pointer.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Roulette.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="input.c">
+		<Unit filename="Table.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="jobhead.h" />

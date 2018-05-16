@@ -6,7 +6,7 @@ int *n_num;
 int **ChroOne;
 int ProcedureTotal=0;
 int GreatGeneNum=0;
-int *GreatGeneChain	;
+int *GreatGeneChain;
 int *FitFather;
 int *FitSon;
 int **ChroTwo;
@@ -14,7 +14,7 @@ int **ChroSon;
 int main()
 {
     srand((unsigned int)time(NULL));
-    freopen("test6_6.txt","r",stdin);
+    freopen("test2_2.txt","r",stdin);
     int i,j;
     scanf("%d%d",&N,&M);
 	Allocate();
@@ -35,7 +35,7 @@ int main()
    Gene_initialize();
    Gene_decode();
    int generation=1;
-   while(generation<=30)
+   while(generation<=1000)
    {
         if(generation%2==1)Gene_evolveodd();
         else Gene_evolveeven();
@@ -48,6 +48,7 @@ int main()
 	for(i=1;i<=ProcedureTotal;i++)
 	printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
 	Table(GreatGeneChain);
+	freepointer();
     return 0;
 }
 

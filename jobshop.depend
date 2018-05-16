@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1526387682 source:d:\app\github\jobshop\gene_denormalgene.c
+1526468418 source:d:\app\github\jobshop\gene_denormalgene.c
 	"jobhead.h"
 
-1526389078 d:\app\github\jobshop\jobhead.h
+1526468228 d:\app\github\jobshop\jobhead.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -12,7 +12,7 @@
 1526389248 source:d:\app\github\jobshop\allocate.c
 	"jobhead.h"
 
-1526430614 source:d:\app\github\jobshop\input.c
+1526467915 source:d:\app\github\jobshop\input.c
 	"jobhead.h"
 
 1526450060 source:d:\app\github\jobshop\gene_crossmutate.c
@@ -24,7 +24,7 @@
 1526387682 source:d:\app\github\jobshop\gene_initialize.c
 	"jobhead.h"
 
-1526450103 source:d:\app\github\jobshop\main.c
+1526469204 source:d:\app\github\jobshop\main.c
 	"jobhead.h"
 
 1526387682 source:d:\app\github\jobshop\others.c
@@ -33,6 +33,15 @@
 1526387682 source:d:\app\github\jobshop\roulette.c
 	"jobhead.h"
 
-1526387826 source:d:\app\github\jobshop\gene_getgreat.c
+1526468424 source:d:\app\github\jobshop\gene_getgreat.c
+	"jobhead.h"
+
+1526454953 source:d:\app\github\jobshop\championships.c
+	"jobhead.h"
+
+1526468839 source:d:\app\github\jobshop\table.c
+	"jobhead.h"
+
+1526468895 source:d:\app\github\jobshop\pointer.c
 	"jobhead.h"
 

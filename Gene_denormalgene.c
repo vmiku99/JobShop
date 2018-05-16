@@ -23,7 +23,7 @@ int DeNormalGene(int* NormalGeneChain)
     }
 	if(GreatGeneNum==0)
 		GreatGeneNum=maxTime;
-	else 
+	else
 	{
 	if(GreatGeneNum>maxTime)
 	{
@@ -32,8 +32,8 @@ int DeNormalGene(int* NormalGeneChain)
    			GreatGeneChain[j]=NormalGeneChain[j];
 	}}
 	NormalGeneChain[0]=maxTime;
-//	free(TimeMachine);
-//	free(TimesTool);
-//	free(TimeTool);
+	free(TimeMachine);
+	free(TimesTool);
+	free(TimeTool);
 	return maxTime;
 }
