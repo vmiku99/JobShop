@@ -8,7 +8,7 @@ int DeNormalGene(int* NormalGeneChain)
     int timeStart;
     int temp;
     int maxTime=0;
-    int j,k;
+    int i,j,k;
     memset(TimeMachine,0,sizeof(int)*(M+1));
     memset(TimeTool,0,sizeof(int)*(N+1));
     memset(TimesTool,0,sizeof(int)*(N+1));
@@ -22,14 +22,17 @@ int DeNormalGene(int* NormalGeneChain)
         maxTime=Max(maxTime,TimeTool[temp]);
     }
 	if(GreatGeneNum==0)
-		GreatGeneNum=maxTime;
+		{   for(i=1;i<=ProcedureTotal;i++)
+   			GreatGeneChain[i]=NormalGeneChain[i];
+   			GreatGeneNum=maxTime;
+		}
 	else
 	{
 	if(GreatGeneNum>maxTime)
 	{
    		GreatGeneChain[0]=GreatGeneNum=maxTime;
-    	for(j=1;j<=ProcedureTotal;j++)
-   			GreatGeneChain[j]=NormalGeneChain[j];
+    	for(i=1;i<=ProcedureTotal;i++)
+   			GreatGeneChain[i]=NormalGeneChain[i];
 	}}
 	NormalGeneChain[0]=maxTime;
 	free(TimeMachine);

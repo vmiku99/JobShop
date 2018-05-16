@@ -16,7 +16,6 @@ void GetGreatGene()
             if(countnum[temp]>=n_num[temp])
             {
                 j--;
-                continue;
             }
             else
             {
