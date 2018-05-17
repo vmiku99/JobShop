@@ -5,7 +5,8 @@
 #include<time.h>
 #include<memory.h>
 #include<string.h>
-#define chronum 301
+#define chronum 501
+#define age 1000
 extern int **Ma;
 extern int **Ti;
 extern int N;
@@ -17,6 +18,8 @@ extern int *FitFather;
 extern int *FitSon;
 extern int **ChroTwo;
 extern int **ChroSon;
+extern int *average;
+extern int generation;
 //遗传算法
 extern int GreatGeneNum;
 extern int* GreatGeneChain;
@@ -26,8 +29,8 @@ void GetGreatGene();
 int DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
 void Gene_decode();
-void Roulette(int generation);
-void Championships(int generation);
+void Roulette();
+void Championships();
 int Gene_evolveodd();
 int Gene_mutateodd(int flag);
 int Gene_cross1odd(int flag);
@@ -37,7 +40,7 @@ int Gene_mutateeven(int flag);
 int Gene_cross1even(int flag);
 int Gene_cross2even(int a,int b,int flag);
 //其他函数
-void Fitness(int generation);
+void Fitness();
 int Max(int a,int b);
 int input();
 void Table(int* NormalGeneChain);

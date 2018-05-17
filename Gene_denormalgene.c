@@ -22,19 +22,24 @@ int DeNormalGene(int* NormalGeneChain)
         maxTime=Max(maxTime,TimeTool[temp]);
     }
 	if(GreatGeneNum==0)
-		{   for(i=1;i<=ProcedureTotal;i++)
+	{
+			GreatGeneNum=maxTime;
+		for(i=1;i<=ProcedureTotal;i++)
    			GreatGeneChain[i]=NormalGeneChain[i];
-   			GreatGeneNum=maxTime;
-   			GreatGeneChain[0]=GreatGeneNum=maxTime;
 		}
 	else
 	{
 	if(GreatGeneNum>maxTime)
-	{
-   		GreatGeneChain[0]=GreatGeneNum=maxTime;
+	{		
+   		GreatGeneNum=maxTime;
+   		GreatGeneChain[0]=GreatGeneNum;
     	for(i=1;i<=ProcedureTotal;i++)
-   			GreatGeneChain[i]=NormalGeneChain[i];
+   		GreatGeneChain[i]=NormalGeneChain[i];
+   		printf("Change in %d generations\n",generation);
 	}}
+//	printf("maxTime:%3dGreatGeneNum:%d\n",maxTime,GreatGeneChain[1]);
+	//if(GreatGeneNum==0)
+	//printf("dd\n");
 	NormalGeneChain[0]=maxTime;
 	free(TimeMachine);
 	free(TimesTool);

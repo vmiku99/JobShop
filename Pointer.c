@@ -2,6 +2,8 @@
 void Allocate()
 {
 	int i;
+	average=(int*)malloc(sizeof(int)*(age+1));
+	memset(average,0,sizeof(int)*(age+1));
 	Ma=(int **)malloc(sizeof(int *)*(N+1));
     Ti=(int **)malloc(sizeof(int *)*(N+1));
     ChroOne=(int **)malloc(sizeof(int *)*(chronum));
@@ -20,6 +22,7 @@ void Allocate()
 void freepointer()
 {
     int i;
+    free(average);
     free(n_num);
     free(GreatGeneChain);
     free(FitFather);

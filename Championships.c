@@ -1,5 +1,5 @@
 #include"jobhead.h"
-void Championships(int generation)
+void Championships()
 {
 	int temp;
 	int finish;

@@ -50,7 +50,7 @@ void Table(int* NormalGeneChain)
 	int specific=0;
 	int t;
 	int kkkk=0;
-	while(specific<NormalGeneChain[0])
+/*	while(specific<NormalGeneChain[0])
 	{
 //		while(Time<specific)
 //		{end=time(NULL);
@@ -78,27 +78,27 @@ void Table(int* NormalGeneChain)
 			printf("#%d\n",specific);
 		}
 	}
+*/
 
-
-//		specific=NormalGeneChain[0];
-//		printf("Ma ");
-//		for(t=1;t<=specific+10;t+=10)
-//			printf("%-10d",t);
-//		printf("\n");
-//		for(i=1;i<=M;i++)
-//		{	t=1;
-//			printf("%-3d",i);
-//			for(j=1;j<=specific;j++)
-//			{
-//				while(j>MaTimeStop[i][t]&&MaTimeStop[i][t]!=0)
-//					t++;
-//				if(MaTimeStart[i][t]<=j&&j<=MaTimeStop[i][t])
-//					printf("%d",MaTiTool[i][t]);
-//				//	printf("*");
-//				else printf(" ");
-//			}
-//			printf("#%d\n",specific);
-//		}
+		specific=NormalGeneChain[0];
+		printf("Ma ");
+		for(t=1;t<=specific+10;t+=10)
+			printf("%-10d",t);
+		printf("\n");
+		for(i=1;i<=M;i++)
+		{	t=1;
+			printf("%-3d",i);
+			for(j=1;j<=specific;j++)
+			{
+				while(j>MaTimeStop[i][t]&&MaTimeStop[i][t]!=0)
+					t++;
+				if(MaTimeStart[i][t]<=j&&j<=MaTimeStop[i][t])
+					printf("%d",MaTiTool[i][t]);
+				//	printf("*");
+				else printf(" ");
+			}
+			printf("#%d\n",specific);
+		}
 	free(TimeMachine);
 	free(TimesTool);
 	free(TimeTool);

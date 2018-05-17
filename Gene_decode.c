@@ -10,16 +10,16 @@ void Gene_decode()
 	{
 		for(b=1;ptr[b]!=0&&ChroOne[a][0]!=ptr[b]&&b<=chronum-1;b++);
 		if(ChroOne[a][0]==ptr[b])
-	{
-		pptr[b]++;
-	}
+	
+		{
+			pptr[b]++;
+		}
 		else {
-
 		ptr[b]=ChroOne[a][0];
 		pptr[b]++;
 		}
 	}
-	for(a=1;ptr[a]!=0&&pptr[a]!=0&&a<chronum;a++)
+	for(a=1;ptr[a]!=0&&a<chronum;a++)
 	{printf("Time:%5d Times:%3d  %d\n",ptr[a],pptr[a],a);}
 
 	free(pptr);

@@ -1,5 +1,5 @@
 #include"jobhead.h"
-void Roulette(int generation)
+void Roulette()
 {
 	int FitAll=0;
 	int i,j;
@@ -28,7 +28,7 @@ void Roulette(int generation)
 						for(j=0;j<=ProcedureTotal;j++)
 						ChroTwo[finish][j]=ChroOne[i][j];
 					else
-						for(i=1;i<=ProcedureTotal;i++)
+						for(j=0;j<=ProcedureTotal;j++)
 						ChroOne[finish][j]=ChroTwo[i][j];
 				}
 			}
@@ -40,10 +40,10 @@ void Roulette(int generation)
 					key=1;
 					if(generation%2==1)
 						for(j=0;j<=ProcedureTotal;j++)
-						ChroTwo[finish][j]=ChroOne[i][j];
+						ChroTwo[finish][j]=ChroSon[i][j];
 					else
-						for(i=1;i<=ProcedureTotal;i++)
-						ChroOne[finish][j]=ChroTwo[i][j];
+						for(j=0;j<=ProcedureTotal;j++)
+						ChroOne[finish][j]=ChroSon[i][j];
 				}
 			}
 	}

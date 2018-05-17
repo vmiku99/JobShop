@@ -8,7 +8,7 @@ int Gene_initialize()/////////////无返回值，带一个参数
 	int Atemp;
     int temp;
 
-    for(i=1;i<=chronum-1;i++)
+    for(i=1;i<chronum;i++)
     {	times++;
         memset(countnum,0,sizeof(countnum));
         for(j=1;j<=ProcedureTotal;j++)
@@ -33,6 +33,6 @@ int Gene_initialize()/////////////无返回值，带一个参数
 	    i--;
 //        printf("%d\n",i);
     }
-    printf("You try %d times to get A Group Chain\n",times);
+//    printf("You try %d times to get %d Chain\n",times,chronum);
     return 0;	 
 }
