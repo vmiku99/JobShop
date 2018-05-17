@@ -21,6 +21,16 @@ int main()
     scanf("%d%d",&N,&M);
 	Allocate();
 	input();
+/*    for(i=1;i<=N;i++)
+    {
+        for(j=1;j<=M;j++)
+        {
+            scanf("%d%d",&Ma[i][j],&Ti[i][j]);
+            Ma[i][j]++;
+            n_num[i]++;
+            ProcedureTotal++;
+        }
+    }*/
     for(i=0;i<chronum;i++)
 	{
 		ChroOne[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
@@ -34,17 +44,17 @@ int main()
 		GetGreatGene();
 //		for(i=1;i<=ProcedureTotal;i++)
 //		printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
-	
+
    Gene_initialize();
    while(generation<=age)
    {
         if(generation%2==1)Gene_evolveodd();
         else Gene_evolveeven();
       	Fitness();
-        //Roulette();
-        Championships();
+        Roulette();
+        //Championships();
         //Gene_decode();
-    	printf("average:%d\n",average[generation]);
+ //   	printf("average:%d\n",average[generation]);
 	   	generation++;
    }
 //	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);

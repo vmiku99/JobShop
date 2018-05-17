@@ -6,7 +6,8 @@
 #include<memory.h>
 #include<string.h>
 #define chronum 501
-#define age 1000
+#define age 2000
+#define mutaterate 12
 extern int **Ma;
 extern int **Ti;
 extern int N;

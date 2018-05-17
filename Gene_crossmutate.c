@@ -6,7 +6,7 @@ int Gene_evolveodd()
     for(i=1;i<chronum;i++)
     {
         ran=rand()%100+1;
-        if(ran<=5)
+        if(ran<=mutaterate)
         {
             Gene_mutateodd(i);
         }
@@ -162,7 +162,7 @@ int Gene_evolveeven()
     for(i=1;i<chronum;i++)
     {
         ran=rand()%100+1;
-        if(ran<=5)
+        if(ran<=mutaterate)
         {
             Gene_mutateeven(i);
         }
