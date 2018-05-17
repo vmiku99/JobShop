@@ -26,6 +26,7 @@ int DeNormalGene(int* NormalGeneChain)
 			GreatGeneNum=maxTime;
 		for(i=1;i<=ProcedureTotal;i++)
    			GreatGeneChain[i]=NormalGeneChain[i];
+   			GreatGeneChain[0]=GreatGeneNum=maxTime;
 		}
 	else
 	{

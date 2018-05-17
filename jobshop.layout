@@ -68,3 +68,16 @@
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
+[Editors]
+Order=0,1
+Focused=1
+[Editor_0]
+CursorCol=23
+CursorRow=17
+TopLine=17
+LeftChar=1
+[Editor_1]
+CursorCol=25
+CursorRow=49
+TopLine=38
+LeftChar=1
