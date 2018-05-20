@@ -1,5 +1,8 @@
 #include"jobhead.h"
 int counting=1;
+const int all=4;
+int *p;
+int *value
 int evolve(int g)
 {
     int i;
@@ -125,9 +128,8 @@ int cross(int flag,int g)
 }
 int mutate(int flag,int g)
 {
-    const int all=4;
-    int p[all];
-    int value[all];
+
+
     int i,j,k;
     int bestp[all];
     int recentp[all];
@@ -146,10 +148,10 @@ int mutate(int flag,int g)
             }
         }
     }
-
+    counting++;
     return 0;
 }
-int check(int a[],int recent)
+int check(int *a,int recent)
 {
     int i;
     for(i=0;i<recent;i++)
@@ -167,4 +169,8 @@ int factor(int i)
         i--;
     }
     return res;
+}
+int dfs()
+{
+    if(check())
 }

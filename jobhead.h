@@ -9,6 +9,7 @@
 #define age 500
 #define Pmutate 0.9
 #define Pcross 0.2
+#define Nextgen chronum*Pmutate+chronum*Pcross
 extern int **Ma;
 extern int **Ti;
 extern int N;
