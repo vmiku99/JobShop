@@ -7,20 +7,20 @@
 #include<string.h>
 #define chronum 201
 #define age 500
-#define Pmutate 0.9
-#define Pcross 0.2
-#define Nextgen chronum*Pmutate+chronum*Pcross
+#define Pcross 0.9
+#define Pmutate 0.2
+#define Nextgen (chronum-1)*Pcross+1
 extern int **Ma;
 extern int **Ti;
 extern int N;
 extern int M;
 extern int *n_num;
-extern int **ChroOne;
 extern int ProcedureTotal;
-extern int *FitFather;
-extern int *FitSon;
+extern int **ChroOne;
 extern int **ChroTwo;
 extern int **ChroSon;
+extern int *FitFather;
+extern int *FitSon;
 extern int *average;
 extern int generation;
 //ÒÅ´«Ëã·¨

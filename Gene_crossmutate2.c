@@ -2,14 +2,19 @@
 int counting=1;
 const int all=4;
 int *p;
-int *value
+int *value;
+int *bestp;
+int *recentp;
+int mintime;
 int evolve(int g)
 {
     int i;
     int ran;
-    int avoid[(int)(chronum*Pcross)];
+    int avoid[chronum+1];
     memset(avoid,0,sizeof(avoid));
-    for(i=1;i<=chronum*Pcross;i++)
+    int lena=(chronum-1)*Pcross;
+    int lenb=(chronum-1)*Pmutate;
+    for(i=1;i<=lena;i++)
     {
         ran=rand()%chronum+1;
         if(avoid[ran]==0)
@@ -20,7 +25,7 @@ int evolve(int g)
         else i--;
     }
     memset(avoid,0,sizeof(avoid));
-    for(i=1;i<=chronum*Pmutate;i++)
+    for(i=1;i<=lenb;i++)
     {
         ran=rand()%chronum+1;
         if(avoid[ran]==0)
@@ -30,37 +35,30 @@ int evolve(int g)
         }
         else i--;
     }
+    freethem();
     return 0;
 }
 int cross(int flag,int g)
 {
-    int p[4];
-    p[0]=rand()%ProcedureTotal+1;
-    while(1)
-    {
-        p[1]=rand()%ProcedureTotal+1;
-        if(p[1]!=p[0])break;
-    }
-    while(1)
-    {
-        p[2]=rand()%ProcedureTotal+1;
-        if(p[2]!=p[1]&&p[2]!=p[0])break;
-    }
-    while(1)
-    {
-        p[3]=rand()%ProcedureTotal+1;
-        if(p[3]!=p[0]&&p[3]!=p[1]&&p[3]!=p[2])break;
-    }
+    int po[4];
     int i,j,temp;
+    for(i=0;i<all;i++)
+    {
+        while(1)
+        {
+            po[i]=rand()%ProcedureTotal+1;
+            if(check(po,i))break;
+        }
+    }
     for(i=3;i>0;i--)
     {
         for(j=0;j<i;j++)
         {
-            if(p[j]>p[j+1])
+            if(po[j]>po[j+1])
             {
-                temp=p[j];
-                p[j]=p[j+1];
-                p[j+1]=temp;
+                temp=po[j];
+                po[j]=po[j+1];
+                po[j+1]=temp;
             }
         }
     }
@@ -69,23 +67,23 @@ int cross(int flag,int g)
     {
         for(i=1;i<=ProcedureTotal;i++)
         {
-            if(i==p[0])
+            if(i==po[0])
             {
-                for(j=p[2];j<=p[3];j++)
+                for(j=po[2];j<=po[3];j++)
                 {
                     ChroSon[counting][position]=ChroOne[flag][j];
                     position++;
                 }
-                i+=p[3]-p[2];
+                i+=po[3]-po[2];
             }
-            else if(i==p[2])
+            else if(i==po[2])
             {
-                for(j=p[0];j<=p[1];j++)
+                for(j=po[0];j<=po[1];j++)
                 {
                     ChroSon[counting][position]=ChroOne[flag][j];
                     position++;
                 }
-                i+=p[1]-p[0];
+                i+=po[1]-po[0];
             }
             else
             {
@@ -98,23 +96,23 @@ int cross(int flag,int g)
     {
         for(i=1;i<=ProcedureTotal;i++)
         {
-            if(i==p[0])
+            if(i==po[0])
             {
-                for(j=p[2];j<=p[3];j++)
+                for(j=po[2];j<=po[3];j++)
                 {
                     ChroSon[counting][position]=ChroTwo[flag][j];
                     position++;
                 }
-                i+=p[3]-p[2];
+                i+=po[3]-po[2];
             }
-            else if(i==p[2])
+            else if(i==po[2])
             {
-                for(j=p[0];j<=p[1];j++)
+                for(j=po[0];j<=po[1];j++)
                 {
                     ChroSon[counting][position]=ChroTwo[flag][j];
                     position++;
                 }
-                i+=p[1]-p[0];
+                i+=po[1]-po[0];
             }
             else
             {
@@ -128,28 +126,46 @@ int cross(int flag,int g)
 }
 int mutate(int flag,int g)
 {
-
-
-    int i,j,k;
-    int bestp[all];
-    int recentp[all];
-    int mintime;
-    int res=factor(all);
-    if(g%2==1)
+    p=malloc(sizeof(int)*(all));
+    value=malloc(sizeof(int)*(all));
+    bestp=malloc(sizeof(int)*(all));
+    recentp=malloc(sizeof(int)*(all));
+    //   mintime=decode(flag);
+    int i;
+    for(i=0;i<all;i++)
     {
-        for(i=0;i<all;i++)
+        while(1)
         {
-            while(1)
-            {
-                p[i]=rand()%ProcedureTotal+1;
-                if(!check(p,i))continue;
-                value[i]=ChroOne[flag][p[i]];
-                if(check(value,i))break;
-            }
+            p[i]=rand()%ProcedureTotal+1;
+            if(!check(p,i))continue;
+            value[i]=ChroOne[flag][p[i]];
+            if(check(value,i))break;
         }
     }
-    counting++;
+    if(g%2==1)
+    {
+        dfs1(flag,0);
+        for(i=0;i<all;i++)
+        {
+            ChroOne[flag][p[i]]=bestp[i];
+        }
+    }
+    else
+    {
+        dfs2(flag,0);
+        for(i=0;i<all;i++)
+        {
+            ChroTwo[flag][p[i]]=bestp[i];
+        }
+    }
     return 0;
+}
+void freethem()
+{
+    free(p);
+    free(value);
+    free(bestp);
+    free(recentp);
 }
 int check(int *a,int recent)
 {
@@ -160,17 +176,61 @@ int check(int *a,int recent)
     }
     return 1;
 }
-int factor(int i)
+int dfs1(int flag,int step)
 {
-    int res=1;
-    while(i>0)
+    int i;
+    if(step==all)
     {
-        res*=i;
-        i--;
+        for(i=0;i<all;i++)
+        {
+            ChroOne[flag][p[i]]=recentp[i];
+        }
+        if(decode(ChroOne[flag])<mintime)
+        {
+            mintime=decode(ChroOne[flag]);
+            for(i=0;i<all;i++)
+            {
+                bestp[i]=recentp[i];
+            }
+        }
+        return 0;
     }
-    return res;
+    for(i=0;i<all;i++)
+    {
+        recentp[step]=value[i];
+        if(check(recentp,step))
+        {
+            dfs(flag,step+1);
+        }
+    }
+    return 0;
 }
-int dfs()
+int dfs2(int flag,int step)
 {
-    if(check())
+    int i;
+    if(step==all)
+    {
+        for(i=0;i<all;i++)
+        {
+            ChroTwo[flag][p[i]]=recentp[i];
+        }
+        if(decode(ChroTwo[flag])<mintime)
+        {
+            mintime=decode(ChroTwo[flag]);
+            for(i=0;i<all;i++)
+            {
+                bestp[i]=recentp[i];
+            }
+        }
+        return 0;
+    }
+    for(i=0;i<all;i++)
+    {
+        recentp[step]=value[i];
+        if(check(recentp,step))
+        {
+            dfs(flag,step+1);
+        }
+    }
+    return 0;
 }
