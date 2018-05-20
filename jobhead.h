@@ -5,9 +5,10 @@
 #include<time.h>
 #include<memory.h>
 #include<string.h>
-#define chronum 501
-#define age 2000
-#define mutaterate 12
+#define chronum 201
+#define age 500
+#define Pmutate 0.9
+#define Pcross 0.2
 extern int **Ma;
 extern int **Ti;
 extern int N;
@@ -24,14 +25,17 @@ extern int generation;
 //ÒÅ´«Ëã·¨
 extern int GreatGeneNum;
 extern int* GreatGeneChain;
+
 void Allocate();
 void freepointer();
+
 void GetGreatGene();
 int DeNormalGene(int* NormalGeneChain);
 int Gene_initialize();
 void Gene_decode();
 void Roulette();
 void Championships();
+
 int Gene_evolveodd();
 int Gene_mutateodd(int flag);
 int Gene_cross1odd(int flag);

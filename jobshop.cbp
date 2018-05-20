@@ -34,16 +34,19 @@
 		<Unit filename="Championships.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Gene_analysis.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Gene_crossmutate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Gene_decode.c">
+		<Unit filename="Gene_crossmutate2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Gene_denormalgene.c">
+		<Unit filename="Gene_decoding.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Gene_getgreat.c">
+		<Unit filename="Gene_firsttry.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Gene_initialize.c">
