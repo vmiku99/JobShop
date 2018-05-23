@@ -19,7 +19,7 @@ int evolve(int g)
         ran=rand()%chronum+1;
         if(avoid[ran]==0)
         {
-            cross(ran,g);
+            cross(&ran,g);
             avoid[ran]++;
         }
         else i--;
@@ -47,7 +47,7 @@ int cross(int flag,int g)
         while(1)
         {
             po[i]=rand()%ProcedureTotal+1;
-            if(check(po,i))break;
+            if(check(&po,i))break;
         }
     }
     for(i=3;i>0;i--)
@@ -200,7 +200,7 @@ int dfs1(int flag,int step)
         recentp[step]=value[i];
         if(check(recentp,step))
         {
-            dfs(flag,step+1);
+            dfs1(flag,step+1);
         }
     }
     return 0;
@@ -229,7 +229,7 @@ int dfs2(int flag,int step)
         recentp[step]=value[i];
         if(check(recentp,step))
         {
-            dfs(flag,step+1);
+            dfs2(flag,step+1);
         }
     }
     return 0;

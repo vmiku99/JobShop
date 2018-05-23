@@ -16,12 +16,12 @@ int generation;
 int main()
 {
     srand((unsigned int)time(NULL));
- //   freopen("test6_6.txt","r",stdin);
+    freopen("test6_6.txt","r",stdin);
     int i,j;
     scanf("%d%d",&N,&M);
 	Allocate();
-//	input();
-    for(i=1;i<=N;i++)
+	input();
+   /* for(i=1;i<=N;i++)
     {
         for(j=1;j<=M;j++)
         {
@@ -30,7 +30,7 @@ int main()
             n_num[i]++;
             ProcedureTotal++;
         }
-    }
+    }*/
     for(i=0;i<chronum;i++)
 	{
 		ChroOne[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
@@ -48,9 +48,8 @@ int main()
    Gene_initialize();
    while(generation<=age)
    {
-        if(generation%2==1)Gene_evolveodd();
-        else Gene_evolveeven();
-      	Fitness();
+        //evolve(generation);
+      	//Fitness();
         //Roulette();
         Championships();
         //Gene_decode();

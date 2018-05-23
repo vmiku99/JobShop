@@ -6,7 +6,7 @@
 #include<memory.h>
 #include<string.h>
 #define chronum 201
-#define age 500
+#define age 200
 #define Pcross 0.9
 #define Pmutate 0.2
 #define Nextgen (chronum-1)*Pcross+1
