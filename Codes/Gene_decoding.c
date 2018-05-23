@@ -1,5 +1,5 @@
 #include"jobhead.h"
-int DeNormalGene(int* NormalGeneChain)
+int decode(int* NormalGeneChain)
 {
     int *TimeTool=(int*)malloc(sizeof(int)*(N+1));
     int *TimesTool=(int*)malloc(sizeof(int)*(N+1));
@@ -46,4 +46,10 @@ int DeNormalGene(int* NormalGeneChain)
 	free(TimesTool);
 	free(TimeTool);
 	return maxTime;
+}
+
+int Max(int a,int b)
+{
+	if(a>b)return a;
+	else return b;
 }

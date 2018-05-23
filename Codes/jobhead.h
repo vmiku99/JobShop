@@ -31,7 +31,7 @@ void Allocate();
 void freepointer();
 
 void GetGreatGene();
-int DeNormalGene(int* NormalGeneChain);
+int decode(int* NormalGeneChain);
 int Gene_initialize();
 void Gene_decode();
 void Roulette();
@@ -45,7 +45,12 @@ int Gene_evolveeven();
 int Gene_mutateeven(int flag);
 int Gene_cross1even(int flag);
 int Gene_cross2even(int a,int b,int flag);
+int dfs1(int flag,int step);
+int dfs2(int flag,int step);
 //ÆäËûº¯Êı
+int evolve(int g);
+int mutate(int flag,int g);
+void freethem();
 void Fitness();
 int Max(int a,int b);
 int input();

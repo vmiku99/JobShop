@@ -52,7 +52,7 @@ int Gene_mutateodd(int flag)
             break;
         }
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     return 0;
 }
 int Gene_cross1odd(int flag)
@@ -121,7 +121,7 @@ int Gene_cross2odd(int a,int b,int flag)
         ChroSon[flag][cou2]=ChroOne[a][cou2];
         cou2++;
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     if(flag==chronum-1)return 0;
     y=1;cou2=ran1;//重置
     int temp1=a;a=b;b=temp1;//交换ab再来一次！
@@ -151,7 +151,7 @@ int Gene_cross2odd(int a,int b,int flag)
         ChroSon[flag][cou2]=ChroOne[a][cou2];
         cou2++;
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////
@@ -210,7 +210,7 @@ int Gene_mutateeven(int flag)
             break;
         }
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     return 0;
 }
 
@@ -281,7 +281,7 @@ int Gene_cross2even(int a,int b,int flag)
         ChroSon[flag][cou2]=ChroTwo[a][cou2];
         cou2++;
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     if(flag==chronum-1)return 0;
     y=1;cou2=ran1;//重置
     int temp1=a;a=b;b=temp1;//交换ab再来一次！
@@ -311,6 +311,6 @@ int Gene_cross2even(int a,int b,int flag)
         ChroSon[flag][cou2]=ChroTwo[a][cou2];
         cou2++;
     }
-    DeNormalGene(ChroSon[flag]);
+    decode(ChroSon[flag]);
     return 0;
 }
