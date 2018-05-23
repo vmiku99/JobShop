@@ -31,7 +31,7 @@ void Roulette()
 						ChroOne[finish][j]=ChroTwo[i][j];
 				}
 			}
-		for(i=1;i<chronum&&key==0;i++)
+		for(i=1;i<Nextgen&&key==0;i++)
 			{if(foot>FitSon[i])
 				{foot-=FitSon[i];}
 			else
@@ -48,14 +48,14 @@ void Roulette()
 	}
 
 }
-void Fitness()//适应度函数
+void Fitness()
 {	
 	int i;
 	if(generation%2==1)
 		{
 			for(i=1;i<chronum;i++)
 			{FitFather[i]=ChroOne[i][0]-GreatGeneNum+1;
-			FitFather[i]=100000/FitFather[i];
+			FitFather[i]=10000/FitFather[i];
 			
 			average[generation]+=ChroOne[i][0];
 			}
@@ -68,14 +68,14 @@ void Fitness()//适应度函数
 			average[generation]+=ChroTwo[i][0];
 			}
 		}
-	for(i=1;i<200;i++)
+	for(i=1;i<Nextgen;i++)
 		{
 		FitSon[i]=ChroSon[i][0]-GreatGeneNum+1;
 		FitSon[i]=10000/FitSon[i];
-		printf("FS%di%dCS%d\n",FitSon[i],i,ChroSon[i][0]-GreatGeneNum+1);
+	//	printf("FS%di%dCS%d\n",FitSon[i],i,ChroSon[i][0]-GreatGeneNum+1);
 		}
-		average[generation]/=(chronum-1);
-		printf("aaaaverage%d,generation%d\n",average[generation],generation);
+		average[generation]/=(chronum-1);///////////////////////////////////////
+	//	printf("aaaaverage%d,generation%d\n",average[generation],generation);
 }
 void Championships()
 {
