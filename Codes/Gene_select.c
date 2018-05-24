@@ -14,7 +14,7 @@ void Roulette()
 	int	finish;
 
 	for(finish=1;finish<chronum;finish++)
-	{	
+	{
 		foot=rand()%FitAll+1;
 		key=0;
 		for(i=1;i<chronum&&key==0;i++)
@@ -49,19 +49,19 @@ void Roulette()
 
 }
 void Fitness()
-{	
+{
 	int i;
 	if(generation%2==1)
 		{
 			for(i=1;i<chronum;i++)
 			{FitFather[i]=ChroOne[i][0]-GreatGeneNum+1;
 			FitFather[i]=10000/FitFather[i];
-			
+
 			average[generation]+=ChroOne[i][0];
 			}
 		}
-	else 
-		{	
+	else
+		{
 			for(i=1;i<chronum;i++)
 			{FitFather[i]=ChroTwo[i][0]-GreatGeneNum+1;
 			FitFather[i]=10000/FitFather[i];
@@ -87,9 +87,9 @@ void Championships()
 	int tempgrade;
 	int all=chronum+Nextgen-1;;
 	if(generation%2==1)
-	{	
+	{
 		for(finish=1;finish<chronum;finish++)
-		{	
+		{
 			tempchamgrade=0;
 			tempchamnum=0;
 			for(i=1;i<chronum/2;i++)
@@ -97,11 +97,11 @@ void Championships()
 				temp=rand()%(all-1)+1;
 				if(temp>=chronum)
 					tempgrade=ChroSon[temp-chronum+1][0];
-				else 
+				else
 					tempgrade=ChroOne[temp][0];
 				if(tempchamnum==0)
 				{	tempchamnum=temp;
-					tempchamgrade=tempgrade;	
+					tempchamgrade=tempgrade;
 				}
 				else if(tempgrade<tempchamgrade)
 				{
@@ -118,10 +118,10 @@ void Championships()
 						ChroTwo[finish][i]=ChroOne[temp][i];}
 		}
 	}
-	else 
-	{	
+	else
+	{
 		for(finish=1;finish<chronum;finish++)
-		{	
+		{
 			tempchamgrade=0;
 			tempchamnum=0;
 			for(i=1;i<chronum/2;i++)
@@ -129,11 +129,11 @@ void Championships()
 				temp=rand()%(all-1)+1;
 				if(temp>=chronum)
 					tempgrade=ChroSon[temp-chronum+1][0];
-				else 
+				else
 					tempgrade=ChroOne[temp][0];
 				if(tempchamnum==0)
 				{	tempchamnum=temp;
-					tempchamgrade=tempgrade;	
+					tempchamgrade=tempgrade;
 				}
 				else if(tempgrade<tempchamgrade)
 				{
@@ -148,7 +148,7 @@ void Championships()
 				else
 					{for(i=0;i<=ProcedureTotal;i++)
 						ChroOne[finish][i]=ChroTwo[temp][i];}
-		}		
+		}
 	}
 	return ;
 }

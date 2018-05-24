@@ -1,5 +1,5 @@
 #include"jobhead.h"
-int counting=1;
+int counting;
 const int all=4;
 int *p;
 int *value;
@@ -8,6 +8,7 @@ int *recentp;
 int mintime;
 int evolve(int g)
 {
+    counting=1;
     int i;
     int ran;
     int avoid[chronum+1];
@@ -16,22 +17,26 @@ int evolve(int g)
     int lenb=(chronum-1)*Pmutate;
     for(i=1;i<=lena;i++)
     {
-        ran=rand()%chronum+1;
+        ran=rand()%chronum;
+        if(ran==0)continue;
         if(avoid[ran]==0)
         {
-            cross(&ran,g);
+            cross(ran,g);
             avoid[ran]++;
+            printf("Cross!%d\n",i);
         }
         else i--;
     }
     memset(avoid,0,sizeof(avoid));
     for(i=1;i<=lenb;i++)
     {
-        ran=rand()%chronum+1;
+        ran=rand()%chronum;
+        if(ran==0)continue;
         if(avoid[ran]==0)
         {
             mutate(ran,g);
             avoid[ran]++;
+            printf("Mutate!%d\n",i);
         }
         else i--;
     }
@@ -42,12 +47,12 @@ int cross(int flag,int g)
 {
     int po[4];
     int i,j,temp;
-    for(i=0;i<all;i++)
+    for(i=0;i<4;i++)
     {
         while(1)
         {
             po[i]=rand()%ProcedureTotal+1;
-            if(check(&po,i))break;
+            if(check(po,i))break;
         }
     }
     for(i=3;i>0;i--)
@@ -62,6 +67,8 @@ int cross(int flag,int g)
             }
         }
     }
+    printf("%d\n",flag);
+    printf("%d %d %d %d\n",po[0],po[1],po[2],po[3]);
     int position=1;
     if(g%2==1)
     {
@@ -74,7 +81,6 @@ int cross(int flag,int g)
                     ChroSon[counting][position]=ChroOne[flag][j];
                     position++;
                 }
-                i+=po[3]-po[2];
             }
             else if(i==po[2])
             {
@@ -83,8 +89,8 @@ int cross(int flag,int g)
                     ChroSon[counting][position]=ChroOne[flag][j];
                     position++;
                 }
-                i+=po[1]-po[0];
             }
+            else if((i>po[0]&&i<=po[1])||(i>po[2]&&i<=po[3]))continue;
             else
             {
                 ChroSon[counting][position]=ChroOne[flag][i];
@@ -103,7 +109,6 @@ int cross(int flag,int g)
                     ChroSon[counting][position]=ChroTwo[flag][j];
                     position++;
                 }
-                i+=po[3]-po[2];
             }
             else if(i==po[2])
             {
@@ -112,15 +117,20 @@ int cross(int flag,int g)
                     ChroSon[counting][position]=ChroTwo[flag][j];
                     position++;
                 }
-                i+=po[1]-po[0];
             }
+            else if((i>po[0]&&i<=po[1])||(i>po[2]&&i<=po[3]))continue;
             else
             {
                 ChroSon[counting][position]=ChroTwo[flag][i];
                 position++;
             }
         }
+
     }
+
+    for(i=1;i<=ProcedureTotal;i++)printf("%d ",ChroSon[counting][i]);
+    printf("\n");
+    decode(ChroSon[counting]);
     counting++;
     return 0;
 }
@@ -130,20 +140,22 @@ int mutate(int flag,int g)
     value=malloc(sizeof(int)*(all));
     bestp=malloc(sizeof(int)*(all));
     recentp=malloc(sizeof(int)*(all));
-    //   mintime=decode(flag);
+
     int i;
-    for(i=0;i<all;i++)
-    {
-        while(1)
-        {
-            p[i]=rand()%ProcedureTotal+1;
-            if(!check(p,i))continue;
-            value[i]=ChroOne[flag][p[i]];
-            if(check(value,i))break;
-        }
-    }
     if(g%2==1)
     {
+        mintime=decode(ChroOne[flag]);
+        printf("%d\n",mintime);
+        for(i=0;i<all;i++)
+        {
+            while(1)
+            {
+                p[i]=rand()%ProcedureTotal+1;
+                if(!check(p,i))continue;
+                value[i]=ChroOne[flag][p[i]];
+                if(check(value,i))break;
+            }
+        }
         dfs1(flag,0);
         for(i=0;i<all;i++)
         {
@@ -152,6 +164,18 @@ int mutate(int flag,int g)
     }
     else
     {
+        mintime=decode(ChroTwo[flag]);
+        printf("%d\n",mintime);
+        for(i=0;i<all;i++)
+        {
+            while(1)
+            {
+                p[i]=rand()%ProcedureTotal+1;
+                if(!check(p,i))continue;
+                value[i]=ChroTwo[flag][p[i]];
+                if(check(value,i))break;
+            }
+        }
         dfs2(flag,0);
         for(i=0;i<all;i++)
         {
