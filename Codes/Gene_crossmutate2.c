@@ -18,12 +18,15 @@ int evolve(int g)
     for(i=1;i<=lena;i++)
     {
         ran=rand()%chronum;
-        if(ran==0)continue;
+        if(ran==0)
+        {
+            i--;
+            continue;
+        }
         if(avoid[ran]==0)
         {
             cross(ran,g);
             avoid[ran]++;
-            printf("Cross!%d\n",i);
         }
         else i--;
     }
@@ -31,12 +34,15 @@ int evolve(int g)
     for(i=1;i<=lenb;i++)
     {
         ran=rand()%chronum;
-        if(ran==0)continue;
+        if(ran==0)
+        {
+            i--;
+            continue;
+        }
         if(avoid[ran]==0)
         {
             mutate(ran,g);
             avoid[ran]++;
-            printf("Mutate!%d\n",i);
         }
         else i--;
     }
@@ -67,8 +73,6 @@ int cross(int flag,int g)
             }
         }
     }
-    printf("%d\n",flag);
-    printf("%d %d %d %d\n",po[0],po[1],po[2],po[3]);
     int position=1;
     if(g%2==1)
     {
@@ -127,9 +131,6 @@ int cross(int flag,int g)
         }
 
     }
-
-    for(i=1;i<=ProcedureTotal;i++)printf("%d ",ChroSon[counting][i]);
-    printf("\n");
     decode(ChroSon[counting]);
     counting++;
     return 0;
@@ -145,7 +146,6 @@ int mutate(int flag,int g)
     if(g%2==1)
     {
         mintime=decode(ChroOne[flag]);
-        printf("%d\n",mintime);
         for(i=0;i<all;i++)
         {
             while(1)
@@ -156,6 +156,10 @@ int mutate(int flag,int g)
                 if(check(value,i))break;
             }
         }
+        for(i=0;i<all;i++)
+        {
+            bestp[i]=ChroOne[flag][p[i]];
+        }
         dfs1(flag,0);
         for(i=0;i<all;i++)
         {
@@ -165,7 +169,6 @@ int mutate(int flag,int g)
     else
     {
         mintime=decode(ChroTwo[flag]);
-        printf("%d\n",mintime);
         for(i=0;i<all;i++)
         {
             while(1)
@@ -175,6 +178,10 @@ int mutate(int flag,int g)
                 value[i]=ChroTwo[flag][p[i]];
                 if(check(value,i))break;
             }
+        }
+        for(i=0;i<all;i++)
+        {
+            bestp[i]=ChroTwo[flag][p[i]];
         }
         dfs2(flag,0);
         for(i=0;i<all;i++)

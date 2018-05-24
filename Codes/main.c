@@ -35,7 +35,7 @@ int main()
 	{
 		ChroOne[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
 		ChroTwo[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
-        ChroSon[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
+        if(i<Nextgen)ChroSon[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
 	}
 		GreatGeneChain=(int*)malloc(sizeof(int)*(ProcedureTotal+1));
 		memset(GreatGeneChain,0,sizeof(int)*(ProcedureTotal+1));
@@ -48,30 +48,6 @@ int main()
    Gene_initialize();
    while(generation<=age)
    {
-       if(generation%2==1)
-       {
-           for(i=1;i<chronum;i++)
-           {
-               printf("One %d:",i);
-               for(j=1;j<=ProcedureTotal;j++)
-               {
-                   printf("%d ",ChroOne[i][j]);
-               }
-               printf("\n");
-           }
-       }
-       else
-       {
-           for(i=1;i<chronum;i++)
-           {
-               printf("Two %d:",i);
-               for(j=1;j<=ProcedureTotal;j++)
-               {
-                   printf("%d ",ChroTwo[i][j]);
-               }
-               printf("\n");
-           }
-       }
         evolve(generation);
       	//Fitness();
         //Roulette();
