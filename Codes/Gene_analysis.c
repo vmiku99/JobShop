@@ -100,7 +100,8 @@ int decode(int* NormalGeneChain)
 	   	for(a=1;MaTimeStop[ma][a]!=0&&timeStart==-1;a++)
 	   		{if(MaTimeStart[ma][a+1]-MaTimeStop[ma][a]>=Ti[temp][k]&&(MaTimeStop[ma][a]>=TimeTool[temp]||MaTimeStart[ma][a+1]-Ti[temp][k]>=TimeTool[temp]))
 	   			timeStart=MaTimeStop[ma][a];
-	   		}		
+	   		}
+		a--;	
 	   	if(timeStart==-1)
  		{	
 		 	for(a=1;MaTimeStop[ma][a]!=0;a++)
