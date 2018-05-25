@@ -79,13 +79,17 @@ int decode(int* NormalGeneChain)
     memset(TimeMachine,0,sizeof(int)*(M+1));
     memset(TimeTool,0,sizeof(int)*(N+1));
     memset(TimesTool,0,sizeof(int)*(N+1));
-    int MaTimeStart[M+1][N+1];
-    int MaTimeStop[M+1][N+1];
+	int **MaTimeStart=(int**)malloc(sizeof(int*)*(M+1));
+	int **MaTimeStop=(int**)malloc(sizeof(int*)*(M+1));
+
 	for(i=0;i<=M;i++)
-	{	
+	{
+	MaTimeStart[i]=(int*)malloc(sizeof(int)*(N+1));
+	MaTimeStop[i]=(int*)malloc(sizeof(int)*(N+1));		
     memset(MaTimeStart[i],0,sizeof(int)*(N+1));
     memset(MaTimeStop[i],0,sizeof(int)*(N+1));
 	}
+
     int ma,a;
 	for(j=1;j<=ProcedureTotal;j++)
 	{	
@@ -104,7 +108,6 @@ int decode(int* NormalGeneChain)
 			timeStart=Max(TimeTool[temp],TimeMachine[ma]);
 			MaTimeStart[ma][a]=timeStart;
  			TimeMachine[ma]=TimeTool[temp]=MaTimeStop[ma][a]=timeStart+Ti[temp][k];
- 			maxTime=Max(maxTime,MaTimeStop[temp][a]);
  		}
  		else if(MaTimeStop[ma][a]>=TimeTool[temp]) 
  		{
@@ -125,7 +128,7 @@ int decode(int* NormalGeneChain)
 	for(c=1;c<=M;c++)
 	for(d=1;MaTimeStop[c][d]!=0&&d<=N;d++)
 	maxTime=Max(maxTime,MaTimeStop[c][d]);
-			
+	
 	if(GreatGeneNum==0)
 	{	
 		printf("%d to %d",GreatGeneNum,maxTime);
@@ -146,6 +149,13 @@ int decode(int* NormalGeneChain)
    		printf("Change in %d generations\n",generation);
 	}}
 	NormalGeneChain[0]=maxTime;
+	for(i=0;i<=M;i++)
+	{
+	free(MaTimeStart[i]);
+    free(MaTimeStop[i]);
+	}
+	free(MaTimeStart);
+	free(MaTimeStop);
 	return maxTime;
 }
 
