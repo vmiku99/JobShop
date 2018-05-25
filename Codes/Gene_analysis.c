@@ -123,7 +123,7 @@ int decode(int* NormalGeneChain)
 	free(TimeTool);
 
 	for(c=1;c<=M;c++)
-	for(d=1;MaTimeStop[c][d]!=0;d++)
+	for(d=1;MaTimeStop[c][d]!=0&&d<=N;d++)
 	maxTime=Max(maxTime,MaTimeStop[c][d]);
 			
 	if(GreatGeneNum==0)
