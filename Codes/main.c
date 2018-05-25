@@ -16,12 +16,12 @@ int generation;
 int main()
 {
     srand((unsigned int)time(NULL));
-    freopen("test6_6.txt","r",stdin);
+//    freopen("test6_6.txt","r",stdin);
     int i,j;
     scanf("%d%d",&N,&M);
 	Allocate();
-	input();
-   /* for(i=1;i<=N;i++)
+//	input();
+    for(i=1;i<=N;i++)
     {
         for(j=1;j<=M;j++)
         {
@@ -30,7 +30,7 @@ int main()
             n_num[i]++;
             ProcedureTotal++;
         }
-    }*/
+    }
     for(i=0;i<chronum;i++)
 	{
 		ChroOne[i]=(int *)malloc(sizeof(int)*(ProcedureTotal+1));
@@ -44,16 +44,25 @@ int main()
 		GetGreatGene();
 //		for(i=1;i<=ProcedureTotal;i++)
 //		printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
-
+   int Pre;
+   int repeat=0;
    Gene_initialize();
    while(generation<=age)
    {
+        if(repeat==100)
+        {
+            Gene_initialize();
+            repeat=0;
+        }
+        Pre=GreatGeneNum;
         evolve(generation);
-      	//Fitness();
-        //Roulette();
-        Championships();
+      	Fitness();
+        Roulette();
+ //     Championships();
         //Gene_decode();
  //   	printf("average:%d\n",average[generation]);
+        if(GreatGeneNum==Pre)repeat++;
+        else repeat=0;
 	   	generation++;
    }
    for(i=1;i<=ProcedureTotal;i++)
@@ -61,11 +70,12 @@ int main()
        printf("%d ",GreatGeneChain[i]);
    }
    printf("\n");
-//	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);
+	printf("Bang!\nBang!!\nBang!!!\nYou got the Great Number:%d\nLet's Play OW!!!\n'",GreatGeneNum);
 //	for(i=1;i<=ProcedureTotal;i++)
 //	printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
-	Table(GreatGeneChain);
+//	Table(GreatGeneChain);
 	freepointer();
+	system("pause");
     return 0;
 }
 
