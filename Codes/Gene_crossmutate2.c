@@ -1,6 +1,6 @@
 #include"jobhead.h"
 int counting;
-const int all=4;
+int all;
 int *p;
 int *value;
 int *bestp;
@@ -137,11 +137,12 @@ int cross(int flag,int g)
 }
 int mutate(int flag,int g)
 {
+    if(N>=4)all=4;
+    else all=N;
     p=malloc(sizeof(int)*(all));
     value=malloc(sizeof(int)*(all));
     bestp=malloc(sizeof(int)*(all));
     recentp=malloc(sizeof(int)*(all));
-
     int i;
     if(g%2==1)
     {
