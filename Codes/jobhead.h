@@ -49,6 +49,14 @@ int cross(int flag,int g);
 int mutate(int flag,int g);
 int check(int *a,int recent);
 void freethem();
+struct Result{
+	int start;
+	int stop;
+	int times;
+	int tool;
+	struct Result* next;
+
+};
 void OutPut(int* NormalGeneChain);
 void Freestruct(struct Result* rr);
 int dfs1(int flag,int step);

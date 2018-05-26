@@ -1,12 +1,4 @@
 #include"jobhead.h"
-struct Result{
-	int start;
-	int stop;
-	int times;
-	int tool;
-	struct Result* next;
-
-};
 void Table(int* NormalGeneChain)
 {
     int *TimeTool=(int*)malloc(sizeof(int)*(N+1));
