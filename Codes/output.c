@@ -229,5 +229,5 @@ void Freestruct(struct Result* rr)
 {
 	if(rr->next!=NULL)
 	Freestruct(rr->next);
-	else free(rr);
+	free(rr);
 }

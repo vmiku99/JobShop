@@ -75,6 +75,7 @@ int main()
 //	printf("GreatGeneChain:%d\t%d\n",i,GreatGeneChain[i]);
 //	Table(GreatGeneChain);
 	freepointer();
+	OutPut(GreatGeneChain);
 	system("pause");
     return 0;
 }
