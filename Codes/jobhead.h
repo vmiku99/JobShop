@@ -49,6 +49,8 @@ int cross(int flag,int g);
 int mutate(int flag,int g);
 int check(int *a,int recent);
 void freethem();
+void OutPut(int* NormalGeneChain);
+void Freestruct(struct Result* rr);
 int dfs1(int flag,int step);
 int dfs2(int flag,int step);
 //ÆäËûº¯Êı
