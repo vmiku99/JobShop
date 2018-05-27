@@ -45,3 +45,18 @@ int input()
     }
     return 0;
 }
+int input2()
+{
+    int i,j;
+    for(i=1;i<=N;i++)
+    {
+        for(j=1;j<=M;j++)
+        {
+            scanf("%d%d",&Ma[i][j],&Ti[i][j]);
+            Ma[i][j]++;
+            n_num[i]++;
+            ProcedureTotal++;
+        }
+    }
+    return 0;
+}

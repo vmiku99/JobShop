@@ -7,8 +7,6 @@ void Roulette()
 		FitAll+=FitFather[i];
 	for(i=1;i<Nextgen;i++)
 		FitAll+=FitSon[i];
-
-	int temp;
 	int foot;
 	int key=0;
 	int	finish;
