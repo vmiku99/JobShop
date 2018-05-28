@@ -12,25 +12,28 @@ int evolve()
     int i;
     int ran;
     int avoid[chronum+1];
-    memset(avoid,0,sizeof(avoid));
-    int lena=(chronum-1)*Pcross;
-    int lenb=(chronum-1)*Pmutate;
-    for(i=1;i<=lena;i++)
+    if(ProcedureTotal>4)
     {
-        ran=rand()%chronum;
-        if(ran==0)
+        memset(avoid,0,sizeof(avoid));
+        int lena=(chronum-1)*Pcross;
+        for(i=1;i<=lena;i++)
         {
-            i--;
-            continue;
+            ran=rand()%chronum;
+            if(ran==0)
+            {
+                i--;
+                continue;
+            }
+            if(avoid[ran]==0)
+            {
+                cross(ran);
+                avoid[ran]++;
+            }
+            else i--;
         }
-        if(avoid[ran]==0)
-        {
-            cross(ran);
-            avoid[ran]++;
-        }
-        else i--;
     }
     memset(avoid,0,sizeof(avoid));
+    int lenb=(chronum-1)*Pmutate;
     for(i=1;i<=lenb;i++)
     {
         ran=rand()%chronum;
