@@ -21,7 +21,7 @@ extern int **ChroTwo;                         //染色体群2
 extern int **ChroSon;                         //子代染色体
 extern int *FitFather;                        //父代适应度
 extern int *FitSon;                           //子代适应度
-extern int *average;                          //适应度平均值
+extern int average;                          //适应度平均值
 extern int generation;                        //更新多少代
 extern clock_t start;                         //时间长度
 //最短记录

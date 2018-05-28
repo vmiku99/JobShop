@@ -45,7 +45,7 @@ int main()
         Fitness();
         Roulette();
     //  Championships();
-    //  printf("average:%d\n",average[generation]);
+    //  printf("average:%d\n",average);
         if(GreatGeneNum==Pre)repeat++;
         else repeat=0;
         generation++;

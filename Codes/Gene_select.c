@@ -49,31 +49,30 @@ void Roulette()
 void Fitness()
 {
 	int i;
+	average=0;
 	if(generation%2==1)
 		{
 			for(i=1;i<chronum;i++)
-			{FitFather[i]=ChroOne[i][0]-GreatGeneNum+1;
-			FitFather[i]=10000/FitFather[i];
+			{FitFather[i]=ChroOne[i][0]-0.8*GreatGeneNum;
+			FitFather[i]=100*GreatGeneNum/FitFather[i];
 
-			average[generation]+=ChroOne[i][0];
+			average+=ChroOne[i][0];
 			}
 		}
 	else
 		{
 			for(i=1;i<chronum;i++)
-			{FitFather[i]=ChroTwo[i][0]-GreatGeneNum+1;
-			FitFather[i]=10000/FitFather[i];
-			average[generation]+=ChroTwo[i][0];
+			{FitFather[i]=ChroTwo[i][0]-0.8*GreatGeneNum;
+			FitFather[i]=100*GreatGeneNum/FitFather[i];
+			average+=ChroTwo[i][0];
 			}
 		}
 	for(i=1;i<Nextgen;i++)
 		{
-		FitSon[i]=ChroSon[i][0]-GreatGeneNum+1;
-		FitSon[i]=10000/FitSon[i];
-	//	printf("FS%di%dCS%d\n",FitSon[i],i,ChroSon[i][0]-GreatGeneNum+1);
+		FitSon[i]=ChroSon[i][0]-0.8*GreatGeneNum;
+		FitSon[i]=100*GreatGeneNum/FitSon[i];
 		}
-		average[generation]/=(chronum-1);///////////////////////////////////////
-	//	printf("aaaaverage%d,generation%d\n",average[generation],generation);
+		average/=(chronum-1);
 }
 void Championships()
 {
