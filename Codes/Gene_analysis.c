@@ -60,7 +60,7 @@ int Gene_initialize()
         	Atemp=decode(ChroOne[i]);
         else 
 			Atemp=decode(ChroTwo[i]);
-		if(Atemp>1.2*GreatGeneNum&&Arandom>=GreatGeneNum*150/Atemp)
+		if(Atemp>1.1*GreatGeneNum&&Arandom>=1.0*GreatGeneNum*125/Atemp)
 	    i--;
     }
     return 0;
