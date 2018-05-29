@@ -167,7 +167,7 @@ void OutPut(int* NormalGeneChain)
 	{
 		printf("M%d ",i-1);
 		for(TT=result[i];TT->next!=NULL;TT=TT->next)
-		printf("(%d,%d-%d,%d) ",TT->start,TT->tool-1,TT->times,TT->stop);
+		printf("(%d,%d-%d,%d) ",TT->start,TT->tool-1,TT->times-1,TT->stop);
 		printf("\n");
 	}
 	printf("Time Used:%.3f",(double)(clock()-start)/CLOCKS_PER_SEC);printf("s\n");
