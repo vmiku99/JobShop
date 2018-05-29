@@ -58,9 +58,9 @@ int Gene_initialize()
         Arandom=rand()%100+1;
 		if(generation%2==1)
         	Atemp=decode(ChroOne[i]);
-        else 
+        else
 			Atemp=decode(ChroTwo[i]);
-		if(Atemp>1.1*GreatGeneNum&&Arandom>=1.0*GreatGeneNum*125/Atemp)
+		if(Atemp>1.05*GreatGeneNum&&Arandom>=GreatGeneNum*112/Atemp)
 	    i--;
     }
     return 0;

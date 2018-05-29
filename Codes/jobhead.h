@@ -39,6 +39,7 @@ int Gene_initialize();                        //初始化种群
 void Roulette();                              //轮盘赌
 void Championships();                         //锦标赛
 //进化变异操作
+int addChro();                                //增加染色体
 int evolve();                                 //进化
 int cross(int flag);                          //杂交
 int mutate(int flag);                         //变异

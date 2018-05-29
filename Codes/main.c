@@ -11,7 +11,7 @@ int GreatGeneNum=0;
 int *GreatGeneChain;
 int *FitFather;
 int *FitSon;
-int average;
+int average=0;
 int generation;
 int chronum;
 int Nextgen;
@@ -21,36 +21,39 @@ int main()
 {
     start=clock();
     srand((unsigned int)time(NULL));
-    freopen("la01.txt","r",stdin);
+    freopen("abz9.txt","r",stdin);
     scanf("%d%d",&N,&M);
-    if(N*M>50){chronum=501;age=500;}
-    else {chronum=201;age=200;}
+    chronum=301;age=500;
     Nextgen=(chronum-1)*Pcross+1;
     Allocate();
     input2();
     Allocate2();
     int Pre;
     int repeat=0;
-    Gene_initialize();
     generation=1;
-    while(generation<=age)
+    Gene_initialize();
+    while(clock()<290000)
     {
-        if(repeat==20)
+        Pre=GreatGeneNum;
+        if(repeat==50)
         {
-            Gene_initialize();
+            addChro();
             repeat=0;
         }
-        Pre=GreatGeneNum;
-        evolve();
+        else
+        {
+            evolve();
+        }
         Fitness();
         Roulette();
     //  Championships();
-    //  printf("average:%d\n",average);
+        printf("generation:%d average:%d\n",generation,average);
         if(GreatGeneNum==Pre)repeat++;
         else repeat=0;
         generation++;
     }
     OutPut(GreatGeneChain);
     freepointer();
+    system("pause");
     return 0;
 }

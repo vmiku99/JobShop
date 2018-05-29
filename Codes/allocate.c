@@ -33,7 +33,6 @@ void Allocate2()
 void freepointer()
 {
     int i;
-    free(average);
     free(n_num);
     free(GreatGeneChain);
     free(FitFather);

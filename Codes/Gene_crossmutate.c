@@ -269,3 +269,36 @@ int dfs2(int flag,int step)
     }
     return 0;
 }
+int addChro()
+{
+    int countnum[N+1];
+    int i,j;
+    int Arandom;
+    int times=0;
+	int Atemp;
+    int temp;
+    for(i=1;i<Nextgen;i++)
+    {
+        times++;
+        memset(countnum,0,sizeof(countnum));
+        for(j=1;j<=ProcedureTotal;j++)
+        {
+            temp=rand()%N+1;
+            if(countnum[temp]>=n_num[temp])
+            {
+                j--;
+                continue;
+            }
+            else
+            {
+				ChroSon[i][j]=temp;
+                countnum[temp]++;
+            }
+        }
+        Arandom=rand()%100+1;
+		Atemp=decode(ChroSon[i]);
+		if(Atemp>1.05*GreatGeneNum&&Arandom>=GreatGeneNum*112/Atemp)
+	    i--;
+    }
+    return 0;
+}
