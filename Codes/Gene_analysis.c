@@ -48,13 +48,19 @@ int Gene_initialize()
             }
             else
             {
-                ChroOne[i][j]=temp;
+				if(generation%2==1)
+                	ChroOne[i][j]=temp;
+				else
+					ChroTwo[i][j]=temp;
                 countnum[temp]++;
             }
         }
         Arandom=rand()%100+1;
-        Atemp=decode(ChroOne[i]);
-        if(Atemp>1.2*GreatGeneNum&&Arandom>=GreatGeneNum*150/Atemp)
+		if(generation%2==1)
+        	Atemp=decode(ChroOne[i]);
+        else 
+			Atemp=decode(ChroTwo[i]);
+		if(Atemp>1.2*GreatGeneNum&&Arandom>=GreatGeneNum*150/Atemp)
 	    i--;
     }
     return 0;

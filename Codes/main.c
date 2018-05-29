@@ -11,7 +11,7 @@ int GreatGeneNum=0;
 int *GreatGeneChain;
 int *FitFather;
 int *FitSon;
-int *average;
+int average;
 int generation;
 int chronum;
 int Nextgen;
