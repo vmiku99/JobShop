@@ -40,12 +40,16 @@ void Roulette();                              //轮盘赌
 void Championships();                         //锦标赛
 //进化变异操作
 int addChro();                                //增加染色体
-int evolve();                                 //进化
+int evolve(int re);                                 //进化
 int cross(int flag);                          //杂交
+int mcross(int flag);
+int mcross2(int a,int b,int flag);
+int mutate2(int flag);
 int mutate(int flag);                         //变异
 int check(int *a,int recent);                 //一个检测函数，用来查重
 int dfs1(int flag,int step);                  //两个深搜用来全排列
 int dfs2(int flag,int step);
+int dfs3(int flag,int step);
 void freethem();                              //释放指针
 //输出函数
 struct Result{

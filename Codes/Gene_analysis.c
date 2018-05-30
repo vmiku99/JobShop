@@ -60,7 +60,7 @@ int Gene_initialize()
         	Atemp=decode(ChroOne[i]);
         else
 			Atemp=decode(ChroTwo[i]);
-		if(Atemp>1.05*GreatGeneNum&&Arandom>=GreatGeneNum*112/Atemp)
+		if(Atemp>1.05*GreatGeneNum&&Arandom>=GreatGeneNum*1.0*28/Atemp)
 	    i--;
     }
     return 0;
@@ -132,22 +132,23 @@ int decode(int* NormalGeneChain)
 
 	if(GreatGeneNum==0)
 	{
-		printf("%d to %d",GreatGeneNum,maxTime);
+//      printf("%d to %d",GreatGeneNum,maxTime);
 			GreatGeneNum=maxTime;
 		for(i=1;i<=ProcedureTotal;i++)
 			GreatGeneChain[i]=NormalGeneChain[i];
 		GreatGeneChain[0]=GreatGeneNum=maxTime;
-		printf("Change in %d generations\n",generation);
+//		printf("Change in %d generations\n",generation);
 	}
 	else
 	{
 	if(GreatGeneNum>maxTime)
-	{	printf("%d to %d",GreatGeneNum,maxTime);
+	{
+//	    printf("%d to %d",GreatGeneNum,maxTime);
    		GreatGeneNum=maxTime;
    		GreatGeneChain[0]=GreatGeneNum;
     	for(i=1;i<=ProcedureTotal;i++)
    		GreatGeneChain[i]=NormalGeneChain[i];
-   		printf("Change in %d generations\n",generation);
+ //  	printf("Change in %d generations\n",generation);
 	}}
 	NormalGeneChain[0]=maxTime;
 	for(i=0;i<=M;i++)
