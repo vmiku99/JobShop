@@ -1,0 +1,12 @@
+﻿  paint.cpp
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(131): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(142): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(144): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(145): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(149): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(150): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(258): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(273): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(276): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+c:\users\77068\desktop\新建文件夹\jobshop\jobshop\jobshop\paint.cpp(134): warning C4101: “T”: 未引用的局部变量
+  Jobshop.vcxproj -> C:\Users\77068\Desktop\新建文件夹\Jobshop\Jobshop\Debug\Jobshop.exe
