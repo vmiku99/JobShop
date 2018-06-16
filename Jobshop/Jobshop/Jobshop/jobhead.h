@@ -56,6 +56,7 @@ struct Result {
 	int stop;
 	int times;
 	int tool;
+	int kind;
 	struct Result* next;
 
 };                                            //用来存储的结构体
