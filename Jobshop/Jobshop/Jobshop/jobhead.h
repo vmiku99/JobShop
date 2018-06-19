@@ -70,6 +70,8 @@ int input();                        //输入函数
 int input2();
 void Table(int* NormalGeneChain);   //打表
 void Paint(int* NormalGeneChain);
+void PPPaint(int* NormalGeneChain);
 COLORREF cococolor(int MM);
+void oout(struct Result** result, FILE*str);
 void TcharToChar(const TCHAR * tchar, char * _char);
 #endif // JOBHEAD_H_INCLUDED

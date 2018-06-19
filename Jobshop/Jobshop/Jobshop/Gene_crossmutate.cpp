@@ -51,6 +51,8 @@ int evolve()
 		}
 		else i--;
 	}
+
+	free(avoid);
 	freethem();
 	return 0;
 }
@@ -302,5 +304,6 @@ int addChro()
 		if (Atemp>1.05*GreatGeneNum&&Arandom >= GreatGeneNum * 112 / Atemp)
 			i--;
 	}
+	free(countnum);
 	return 0;
 }

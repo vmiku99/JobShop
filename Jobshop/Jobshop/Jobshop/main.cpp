@@ -36,7 +36,7 @@ int main()
 	int repeat = 0;
 	generation = 1;
 	Gene_initialize();
-	while (clock()<3000)
+	while (clock()<30000)
 	{
 		Pre = GreatGeneNum;
 		if (repeat == 50)
@@ -58,7 +58,7 @@ int main()
 	}
 	OutPut(GreatGeneChain);
 	Paint(GreatGeneChain);
+	PPPaint(GreatGeneChain);
 	freepointer();
-	system("pause");
 	return 0;
 }

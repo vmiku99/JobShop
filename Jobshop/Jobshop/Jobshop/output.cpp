@@ -187,6 +187,10 @@ void OutPut(int* NormalGeneChain)
 	}
 	free(MaTimeStart);
 	free(MaTimeStop);
+	FILE*str = NULL;
+	fopen_s(&str,"output1.txt", "w");
+	oout(result, str);
+	fclose(str);
 	for (i = 0; i <= M; i++)
 		Freestruct(result[i]);
 	free(result);
@@ -196,4 +200,27 @@ void Freestruct(struct Result* rr)
 	if (rr->next != NULL)
 		Freestruct(rr->next);
 	free(rr);
+}
+
+void oout(struct Result** result, FILE*str)
+{	
+	Result *TT=NULL;
+	int i;
+	int max=0;
+	for (i = 1; i <= M; i++)
+	{
+		fprintf_s(str,"M%d ", i - 1);
+		for (TT = result[i]; TT->next != NULL; TT = TT->next)
+		{
+			if (TT->tool != -1)
+				fprintf_s(str,"(%d,%d-%d,%d) ", TT->start, TT->tool - 1, TT->times - 1, TT->stop);
+			else 
+				fprintf_s(str, "(%d,¼ìÐÞ,%d) ", TT->start, TT->stop);
+			max = Max(max, TT->stop);
+		}
+
+		fprintf_s(str,"\n");
+	}
+	fprintf_s(str,"Time Used:%.3f", (double)(clock() - start) / CLOCKS_PER_SEC); fprintf_s(str,"s\n");
+	fprintf_s(str,"End %d", max);
 }

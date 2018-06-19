@@ -23,6 +23,7 @@ void GetGreatGene()
 		}
 	}
 	decode(NormalGeneChain);
+	free(countnum);
 	free(NormalGeneChain);
 }
 int Gene_initialize()
@@ -63,6 +64,7 @@ int Gene_initialize()
 		if (Atemp>1.05*GreatGeneNum&&Arandom >= GreatGeneNum * 112 / Atemp)
 			i--;
 	}
+	free(countnum);
 	return 0;
 }
 
@@ -133,23 +135,23 @@ int decode(int* NormalGeneChain)
 
 	if (GreatGeneNum == 0)
 	{
-		printf("%d to %d", GreatGeneNum, maxTime);
+//		printf("%d to %d", GreatGeneNum, maxTime);
 		GreatGeneNum = maxTime;
 		for (i = 1; i <= ProcedureTotal; i++)
 			GreatGeneChain[i] = NormalGeneChain[i];
 		GreatGeneChain[0] = GreatGeneNum = maxTime;
-		printf("Change in %d generations\n", generation);
+//		printf("Change in %d generations\n", generation);
 	}
 	else
 	{
 		if (GreatGeneNum>maxTime)
 		{
-			printf("%d to %d", GreatGeneNum, maxTime);
+//			printf("%d to %d", GreatGeneNum, maxTime);
 			GreatGeneNum = maxTime;
 			GreatGeneChain[0] = GreatGeneNum;
 			for (i = 1; i <= ProcedureTotal; i++)
 				GreatGeneChain[i] = NormalGeneChain[i];
-			printf("Change in %d generations\n", generation);
+//			printf("Change in %d generations\n", generation);
 		}
 	}
 	NormalGeneChain[0] = maxTime;
