@@ -390,33 +390,3 @@ void PPPaint(int* NormalGeneChain)
 		Freestruct(result[i]);
 	free(result);
 }
-COLORREF cococolor(int MM)
-{
-	if (MM == -1)return BLACK;
-	else if (MM == 1)return RED;
-	else if (MM == 2)return BLUE;
-	else if (MM == 3)return YELLOW;
-	else if (MM == 4)return GREEN;
-	else if (MM == 5)return CYAN;
-	else if (MM == 6)return MAGENTA;
-	else if (MM == 7)return BROWN;
-	else if (MM == 8)return LIGHTGRAY;
-	else if (MM == 9)return LIGHTBLUE;
-	else if (MM == 10)return DARKGRAY;
-	else if (MM == 11)return LIGHTGREEN;
-	else if (MM == 12)return LIGHTMAGENTA;
-	else if (MM == 13)return LIGHTCYAN;
-	else if (MM == 14)return LIGHTRED;
-	else return LIGHTRED;
-}
-
-
-
-void TcharToChar(const TCHAR * tchar, char * _char)
-{
-	int iLength;
-	//获取字节长度   
-	iLength = WideCharToMultiByte(CP_ACP, 0, tchar, -1, NULL, 0, NULL, NULL);
-	//将tchar值赋给_char    
-	WideCharToMultiByte(CP_ACP, 0, tchar, -1, _char, iLength, NULL, NULL);
-}
